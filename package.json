@@ -1,0 +1,28 @@
+{
+  "name": "altibbe-multi-step-form",
+  "version": "1.0.0",
+  "description": "Dynamic multi-step form with conditional logic and PDF reporting",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "express",
+    "firebase",
+    "pdf"
+  ],
+  "author": "Altibbe",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.11.0"
+  }
+}
