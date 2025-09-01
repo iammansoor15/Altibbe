@@ -41,7 +41,10 @@ app.use(helmet());
 
 // CORS configuration - Allow ALL origins (no localhost restrictions)
 app.use(cors({
-  origin: true, // Allow ALL origins without any restrictions
+  origin: (origin, callback) => {
+    // Always allow all origins for deployment
+    callback(null, origin || true);
+  },
   credentials: true, // allow cookies / auth headers
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin', 'X-Custom-Header'],
@@ -147,7 +150,7 @@ process.on('SIGINT', () => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`CORS origin: ALL ORIGINS ALLOWED (no localhost restrictions)`);
+  console.log(`CORS origin: ALL ORIGINS ALLOWED (deployment mode - no restrictions)`);
   try {
     logStream.write(`[${new Date().toISOString()}] SERVER START port=${PORT}\n`);
   } catch (_) {/* ignore */}
