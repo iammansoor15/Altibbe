@@ -19,6 +19,20 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          ui: ['lucide-react', 'clsx']
+        }
+      }
+    }
+  },
   define: {
     __REACT_ROUTER_FUTURE_FLAGS__: JSON.stringify({
       v7_relativeSplatPath: true

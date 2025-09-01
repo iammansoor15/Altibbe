@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { Product } from '@/types';
 
-const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || 'https://altibbe-server.onrender.com/api';
 
 // AI-specific types
 export interface AIQuestion {
