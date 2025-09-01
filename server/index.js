@@ -39,11 +39,16 @@ if (!db) {
 // Security middleware
 app.use(helmet());
 
-// CORS configuration
+// CORS configuration - Allow all origins
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || ['http://localhost:3000', 'http://localhost:3001'],
-  credentials: true
+  origin: (origin, callback) => {
+    callback(null, origin || true); // reflect request origin dynamically
+  },
+  credentials: true, // allow cookies / auth headers
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
+
 
 // Body parsing middleware (must come before logging that uses req.body)
 app.use(express.json({ limit: '10mb' }));

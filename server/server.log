@@ -712,3 +712,21 @@
 ::1 - - [01/Sep/2025:05:29:12 +0000] "GET /api/reports HTTP/1.1" 200 37663 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
 [2025-09-01T05:29:15.727Z] GET /api/reports/MZ8NmbofHDrBcPc7MFIC/download body={}
 ::1 - - [01/Sep/2025:05:29:25 +0000] "GET /api/reports/MZ8NmbofHDrBcPc7MFIC/download HTTP/1.1" 200 3831 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:30:06.681Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:30:07 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:30:07.047Z] GET /api/auth/verify body={}
+[2025-09-01T05:30:07.072Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:30:07.073Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:30:07 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:30:07 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:30:07 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:30:12.387Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:30:12 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:30:12.820Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:30:13 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:30:14.121Z] GET /api/products?limit=10 body={}
+::1 - - [01/Sep/2025:05:30:14 +0000] "GET /api/products?limit=10 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:36:06.511Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:36:07 +0000] "GET /api/auth/verify HTTP/1.1" 403 277 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:36:07.104Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:36:08 +0000] "GET /api/auth/verify HTTP/1.1" 403 277 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
