@@ -5,7 +5,7 @@ const { authenticateUser } = require('../middleware/auth');
 const router = express.Router();
 
 // AI Service configuration
-const AI_SERVICE_URL = process.env.AI_SERVICE_URL || 'http://localhost:5001';
+const AI_SERVICE_URL = process.env.AI_SERVICE_URL || 'https://altibbe-ai-service.onrender.com';
 
 /**
  * POST /generate-questions

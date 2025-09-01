@@ -730,3 +730,15 @@
 ::1 - - [01/Sep/2025:05:36:07 +0000] "GET /api/auth/verify HTTP/1.1" 403 277 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
 [2025-09-01T05:36:07.104Z] GET /api/auth/verify body={}
 ::1 - - [01/Sep/2025:05:36:08 +0000] "GET /api/auth/verify HTTP/1.1" 403 277 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T06:07:01.125Z] POST /api/auth/register body={"firstName":"John","lastName":"Doe","email":"john.doe@example.com","password":"password123","department":"Engineering","phone":"123-456-7890"}
+::1 - - [01/Sep/2025:06:07:02 +0000] "POST /api/auth/register HTTP/1.1" 201 477 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T06:07:08.125Z] POST /api/auth/register body={"firstName":"Jane","lastName":"Smith","email":"jane.smith@example.com","password":"securepass123","department":"Marketing","phone":"987-654-3210"}
+::1 - - [01/Sep/2025:06:07:08 +0000] "POST /api/auth/register HTTP/1.1" 201 484 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T06:07:14.290Z] POST /api/auth/login body={"email":"john.doe@example.com","password":"password123"}
+::1 - - [01/Sep/2025:06:07:14 +0000] "POST /api/auth/login HTTP/1.1" 200 465 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T06:07:20.167Z] POST /api/auth/register body={"firstName":"John","lastName":"Duplicate","email":"john.doe@example.com","password":"differentpass","department":"IT","phone":"555-123-4567"}
+::1 - - [01/Sep/2025:06:07:20 +0000] "POST /api/auth/register HTTP/1.1" 409 59 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T06:07:25.900Z] POST /api/auth/register body={"firstName":"A","lastName":"","email":"invalid-email","password":"short"}
+::1 - - [01/Sep/2025:06:07:25 +0000] "POST /api/auth/register HTTP/1.1" 400 98 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T06:07:31.491Z] GET /api/health body={}
+::1 - - [01/Sep/2025:06:07:31 +0000] "GET /api/health HTTP/1.1" 200 82 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"

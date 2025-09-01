@@ -12,14 +12,13 @@ const app = express();
 // Security middleware
 app.use(helmet());
 
-// CORS configuration - Allow all origins
+// CORS configuration - Allow ALL origins (no localhost restrictions)
 app.use(cors({
-  origin: (origin, callback) => {
-    callback(null, origin || true); // reflect request origin dynamically
-  },
+  origin: true, // Allow ALL origins without any restrictions
   credentials: true, // allow cookies / auth headers
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin', 'X-Custom-Header'],
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }));
 
 // Logging
@@ -127,7 +126,7 @@ process.on('SIGINT', () => {
 app.listen(config.port, () => {
   console.log(`🚀 AI/ML Microservice running on port ${config.port}`);
   console.log(`📊 Environment: ${config.nodeEnv}`);
-  console.log(`🌐 CORS origin: ${config.corsOrigin}`);
+  console.log(`🌐 CORS origin: ALL ORIGINS ALLOWED (no localhost restrictions)`);
   console.log(`🤖 Google Gemini 2.0 Flash integration ready`);
   console.log(`📚 API Documentation: http://localhost:${config.port}/`);
   

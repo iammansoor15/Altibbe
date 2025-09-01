@@ -39,14 +39,13 @@ if (!db) {
 // Security middleware
 app.use(helmet());
 
-// CORS configuration - Allow all origins
+// CORS configuration - Allow ALL origins (no localhost restrictions)
 app.use(cors({
-  origin: (origin, callback) => {
-    callback(null, origin || true); // reflect request origin dynamically
-  },
+  origin: true, // Allow ALL origins without any restrictions
   credentials: true, // allow cookies / auth headers
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin', 'X-Custom-Header'],
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }));
 
 
@@ -148,7 +147,7 @@ process.on('SIGINT', () => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`CORS origin: ${process.env.CORS_ORIGIN || 'http://localhost:3000'}`);
+  console.log(`CORS origin: ALL ORIGINS ALLOWED (no localhost restrictions)`);
   try {
     logStream.write(`[${new Date().toISOString()}] SERVER START port=${PORT}\n`);
   } catch (_) {/* ignore */}
