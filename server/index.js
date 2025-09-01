@@ -45,7 +45,8 @@ app.use(cors({
   origin: (origin, callback) => {
     const allowedOrigins = [
       "https://altibbe-sjtm.onrender.com",
-      "https://altibbe-ai-service.onrender.com"
+      "https://altibbe-ai-service.onrender.com",
+      "http://localhost:3000"
     ];
 
     if (!origin || allowedOrigins.includes(origin)) {
