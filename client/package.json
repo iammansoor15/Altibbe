@@ -31,6 +31,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:production": "VITE_API_URL=https://altibbe-server.onrender.com/api vite build",
     "preview": "vite preview",
     "start": "vite"
   },
