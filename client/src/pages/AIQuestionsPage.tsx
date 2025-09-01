@@ -25,6 +25,7 @@ const AIQuestionsPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string>('');
+  const [questionsGenerated, setQuestionsGenerated] = useState(false);
 
   const { register, handleSubmit, formState: { errors }, setValue, watch } = useForm<AIQuestionsFormData>();
 
@@ -34,32 +35,90 @@ const AIQuestionsPage: React.FC = () => {
       navigate('/form');
       return;
     }
-    generateAIQuestions();
-  }, [productData, navigate]);
+
+    // Reset questionsGenerated when productData changes
+    if (productData && questionsGenerated) {
+      const currentProductKey = `${productData.productName}_${productData.category}`;
+      if (!generatedProductKey || generatedProductKey !== currentProductKey) {
+        console.log('Product changed, resetting questions state');
+        setQuestionsGenerated(false);
+        setQuestions([]);
+        setError('');
+      }
+    }
+
+    // Only generate questions if they haven't been generated yet
+    if (!questionsGenerated) {
+      generateAIQuestions();
+    }
+  }, [productData, navigate, questionsGenerated]);
+
+  // Track which product the questions were generated for
+  const [generatedProductKey, setGeneratedProductKey] = useState<string>('');
 
   const generateAIQuestions = async () => {
+    // Prevent multiple simultaneous calls
+    if (loading) {
+      console.log('AI question generation already in progress, skipping duplicate call');
+      return;
+    }
+
     try {
       setLoading(true);
       setError('');
-      
+
       console.log('Generating AI questions for product:', productData);
-      
+
       const response = await aiService.generateQuestions(productData);
       console.log('AI Questions response:', response.data);
-      
-      setQuestions(response.data.questions);
-      
-      // Initialize form values
-      response.data.questions.forEach((question, index) => {
-        const fieldName = `question_${index}`;
-        if (question.type === 'boolean') {
-          setValue(fieldName, false);
-        } else {
-          setValue(fieldName, '');
-        }
-      });
-      
-      toast.success(`Generated ${response.data.questions.length} AI-powered questions!`);
+
+      // Handle deduplicated responses
+      if (response.data.deduplicated) {
+        console.log('Request was deduplicated - using cached questions');
+        toast.info('Using cached AI questions for better performance');
+        setQuestionsGenerated(true);
+        setGeneratedProductKey(`${productData.productName}_${productData.category}`);
+        return;
+      }
+
+      // Handle cached responses
+      if (response.data.cached) {
+        console.log('Using cached AI questions');
+        toast.info('Using cached AI questions');
+        setQuestionsGenerated(true);
+        setGeneratedProductKey(`${productData.productName}_${productData.category}`);
+        // For cached responses, we might want to load existing questions
+        // For now, we'll just mark as generated to prevent further calls
+      }
+
+      // Only update questions if we have new ones
+      if (response.data.questions && response.data.questions.length > 0) {
+        setQuestions(response.data.questions);
+
+        // Initialize form values
+        response.data.questions.forEach((question, index) => {
+          const fieldName = `question_${index}`;
+          if (question.type === 'boolean') {
+            setValue(fieldName, false);
+          } else {
+            setValue(fieldName, '');
+          }
+        });
+
+        const message = response.data.cached
+          ? `Loaded ${response.data.questions.length} cached AI questions!`
+          : `Generated ${response.data.questions.length} AI-powered questions!`;
+
+        toast.success(message);
+
+        // Mark questions as generated to prevent duplicate calls
+        setQuestionsGenerated(true);
+        setGeneratedProductKey(`${productData.productName}_${productData.category}`);
+      } else {
+        setError('No questions were generated. Please try again.');
+        toast.error('No questions were generated. Please try again.');
+      }
+
     } catch (err: any) {
       console.error('Error generating AI questions:', err);
       setError(err.response?.data?.error || 'Failed to generate AI questions');
@@ -274,6 +333,19 @@ const AIQuestionsPage: React.FC = () => {
                   <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
                     📝 Questions ({questions.length})
                   </h2>
+                  <Button
+                    onClick={() => {
+                      setQuestionsGenerated(false);
+                      setQuestions([]);
+                      setError('');
+                      generateAIQuestions();
+                    }}
+                    variant="outline"
+                    size="sm"
+                    loading={loading}
+                  >
+                    🔄 Regenerate Questions
+                  </Button>
                   <div className="flex space-x-2">
                     {['transparency', 'sustainability', 'compliance', 'quality', 'safety'].map(category => {
                       const count = questions.filter(q => q.category === category).length;

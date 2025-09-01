@@ -9,19 +9,38 @@ const initializeFirebase = () => {
       return admin.firestore();
     }
 
-    // Load service account credentials from file
-    const serviceAccount = require('./firebase-credentials.json');
+    // Try to load service account credentials from file
+    let serviceAccount;
+    try {
+      serviceAccount = require('../firebase.json');
+      console.log('Firebase credentials file found');
+    } catch (fileError) {
+      console.log('Firebase credentials file not found, checking environment variables...');
+      
+      // Try to use environment variables
+      if (process.env.FIREBASE_PROJECT_ID && process.env.FIREBASE_PRIVATE_KEY && process.env.FIREBASE_CLIENT_EMAIL) {
+        serviceAccount = {
+          projectId: process.env.FIREBASE_PROJECT_ID,
+          privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+          clientEmail: process.env.FIREBASE_CLIENT_EMAIL
+        };
+        console.log('Using Firebase credentials from environment variables');
+      } else {
+        console.log('No Firebase credentials found in file or environment variables');
+        console.log('Running in development mode without Firebase...');
+        return null;
+      }
+    }
 
     admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount)
+      credential: admin.credential.cert(serviceAccount),
+      projectId: serviceAccount.project_id || serviceAccount.projectId
     });
     
-    console.log('Firebase Admin initialized with service account credentials');
     console.log('Firebase Admin initialized successfully');
     return admin.firestore();
   } catch (error) {
     console.error('Error initializing Firebase:', error);
-    // Don't exit, just log the error and continue with limited functionality
     console.log('Continuing with limited Firebase functionality...');
     return null;
   }

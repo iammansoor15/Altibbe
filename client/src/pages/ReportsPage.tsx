@@ -33,6 +33,7 @@ const ReportsPage: React.FC = () => {
   const [statusFilter, setStatusFilter] = useState('all');
   const [dateFilter, setDateFilter] = useState('all');
   const [generatingReport, setGeneratingReport] = useState<string | null>(null);
+  const [selectedQuarter, setSelectedQuarter] = useState<string>('');
 
   const { data: productsData, isLoading: productsLoading } = useQuery(
     'products-for-reports',
@@ -53,31 +54,65 @@ const ReportsPage: React.FC = () => {
   const products = productsData?.products || [];
   const reports = reportsData?.reports || [];
 
-  const handleGenerateReport = async (productIds: string[], reportType: string) => {
+  const handleGenerateReport = async (productIds: any[], reportType: string) => {
     try {
       setGeneratingReport(reportType);
 
+      // Ensure productIds are clean strings and not objects with circular references
+      const cleanProductIds = productIds && productIds.length > 0
+        ? productIds.map(id => {
+            // Handle cases where id might be an object or have circular references
+            if (typeof id === 'string') return id;
+            if (typeof id === 'object' && id !== null) {
+              // If it's an object, try to extract the id property
+              return id.id || id._id || String(id);
+            }
+            return String(id);
+          }).filter(id => id && typeof id === 'string')
+        : undefined;
+
+      console.log('Clean product IDs:', cleanProductIds);
+
       // Generate report title based on type
-      const title = reportType === 'all-products'
-        ? 'Complete Product Transparency Report'
-        : reportType === 'quarterly'
-        ? 'Quarterly Transparency Report'
-        : reportType === 'category'
-        ? 'Category Analysis Report'
-        : reportType === 'compliance'
-        ? 'Compliance Report'
-        : 'Product Report';
+      let title = '';
+      if (reportType === 'all-products') {
+        title = 'Complete Product Transparency Report';
+      } else if (reportType === 'quarterly') {
+        if (!selectedQuarter) {
+          toast.error('Please select a quarter for the quarterly report');
+          setGeneratingReport(null);
+          return;
+        }
+        title = `Quarterly Transparency Report - ${selectedQuarter}`;
+      } else if (reportType === 'category') {
+        title = 'Category Analysis Report';
+      } else {
+        title = 'Product Report';
+      }
+
+      // Ensure selectedQuarter is a clean string
+      const cleanQuarter = selectedQuarter && typeof selectedQuarter === 'string' ? selectedQuarter : undefined;
+
+      console.log('API call data:', {
+        productIds: cleanProductIds,
+        reportType,
+        title,
+        quarter: cleanQuarter
+      });
 
       // Call the real API
       await reportsApi.generateReport({
-        productIds: productIds && productIds.length > 0 ? productIds : undefined,
+        productIds: cleanProductIds,
         reportType,
-        title
+        title,
+        quarter: cleanQuarter
       });
 
       toast.success('Report generated successfully!');
       // Refresh the reports list
       await refetchReports();
+      // Reset quarter selection
+      setSelectedQuarter('');
     } catch (error: any) {
       console.error('Error generating report:', error);
       toast.error(error.response?.data?.error || 'Failed to generate report');
@@ -95,9 +130,9 @@ const ReportsPage: React.FC = () => {
       const link = document.createElement('a');
       link.href = url;
 
-      // Get filename from response headers or use default
+      // Get filename from response headers or use default with .pdf extension
       const contentDisposition = response.headers['content-disposition'];
-      let filename = 'report.txt';
+      let filename = 'report.pdf'; // Default to .pdf extension
       if (contentDisposition) {
         const filenameMatch = contentDisposition.match(/filename="(.+)"/);
         if (filenameMatch) {
@@ -191,15 +226,18 @@ const ReportsPage: React.FC = () => {
       color: 'from-accent-500 to-accent-600',
       bgColor: 'from-accent-50 to-accent-100 dark:from-accent-900/20 dark:to-accent-800/20',
       type: 'category'
-    },
-    {
-      title: 'Compliance Report',
-      description: 'Regulatory compliance and transparency scores',
-      icon: <Shield className="w-6 h-6" />,
-      color: 'from-warning-500 to-warning-600',
-      bgColor: 'from-warning-50 to-warning-100 dark:from-warning-900/20 dark:to-warning-800/20',
-      type: 'compliance'
     }
+  ];
+
+  const quarterOptions = [
+    { value: 'Q1-2024', label: 'Q1 2024 (Jan-Mar)' },
+    { value: 'Q2-2024', label: 'Q2 2024 (Apr-Jun)' },
+    { value: 'Q3-2024', label: 'Q3 2024 (Jul-Sep)' },
+    { value: 'Q4-2024', label: 'Q4 2024 (Oct-Dec)' },
+    { value: 'Q1-2025', label: 'Q1 2025 (Jan-Mar)' },
+    { value: 'Q2-2025', label: 'Q2 2025 (Apr-Jun)' },
+    { value: 'Q3-2025', label: 'Q3 2025 (Jul-Sep)' },
+    { value: 'Q4-2025', label: 'Q4 2025 (Oct-Dec)' }
   ];
 
   // Calculate stats from real data
@@ -297,7 +335,15 @@ const ReportsPage: React.FC = () => {
                 key={reportType.type}
                 className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${reportType.bgColor} p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-slide-up cursor-pointer`}
                 style={{animationDelay: `${700 + index * 100}ms`}}
-                onClick={() => handleGenerateReport(products.map(p => p.id), reportType.type)}
+                onClick={() => {
+                  if (reportType.type === 'quarterly') {
+                    // Don't generate immediately for quarterly reports, need quarter selection
+                    return;
+                  }
+                  // Ensure clean product IDs are passed
+                  const cleanProductIds = products.map(p => typeof p.id === 'string' ? p.id : String(p.id));
+                  handleGenerateReport(cleanProductIds, reportType.type);
+                }}
               >
                 {/* Background Pattern */}
                 <div className="absolute top-0 right-0 w-24 h-24 opacity-10">
@@ -315,11 +361,40 @@ const ReportsPage: React.FC = () => {
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
                     {reportType.description}
                   </p>
-                  
-                  <Button 
-                    size="sm" 
-                    className="btn-primary w-full group-hover:scale-105 transition-transform"
+
+                  {reportType.type === 'quarterly' && (
+                    <div className="mb-4">
+                      <Select
+                        placeholder="Select Quarter"
+                        value={selectedQuarter}
+                        onChange={(e) => {
+                          const value = e.target?.value || e;
+                          setSelectedQuarter(typeof value === 'string' ? value : String(value));
+                        }}
+                        options={quarterOptions.map(option => ({
+                          value: option.value,
+                          label: option.label
+                        }))}
+                        className="w-full"
+                      />
+                    </div>
+                  )}
+
+                  <Button
+                    size="sm"
+                    className={`w-full group-hover:scale-105 transition-transform ${
+                      reportType.type === 'quarterly' && !selectedQuarter
+                        ? 'btn-secondary opacity-50 cursor-not-allowed'
+                        : 'btn-primary'
+                    }`}
                     loading={generatingReport === reportType.type}
+                    disabled={reportType.type === 'quarterly' && !selectedQuarter}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      // Ensure clean product IDs are passed
+                      const cleanProductIds = products.map(p => typeof p.id === 'string' ? p.id : String(p.id));
+                      handleGenerateReport(cleanProductIds, reportType.type);
+                    }}
                   >
                     {generatingReport === reportType.type ? 'Generating...' : 'Generate Report'}
                   </Button>
@@ -420,7 +495,10 @@ const ReportsPage: React.FC = () => {
               {products.length > 0 ? (
                 <Button
                   className="btn-primary"
-                  onClick={() => handleGenerateReport(products.map(p => p.id), 'all-products')}
+                  onClick={() => {
+                    const cleanProductIds = products.map(p => typeof p.id === 'string' ? p.id : String(p.id));
+                    handleGenerateReport(cleanProductIds, 'all-products');
+                  }}
                 >
                   <Plus className="w-4 h-4 mr-2" />
                   Generate First Report

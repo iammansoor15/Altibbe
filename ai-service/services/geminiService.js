@@ -20,35 +20,57 @@ class GeminiService {
         : '';
 
       const prompt = `
-You are an AI assistant specialized in product transparency and compliance. Based on the following product information, generate 3-5 intelligent follow-up questions that would help assess the product's transparency, sustainability, compliance, and quality.
+You are an expert AI assistant specializing in product transparency assessment. Generate EXACTLY 3 UNIQUE questions for the product below.
 
-Product Information:
-- Product Name: ${productData.productName || 'Not specified'}
-- Category: ${productData.category || 'Not specified'}
-- Description: ${productData.description || 'Not specified'}
-- Price: ${productData.price ? `$${productData.price}` : 'Not specified'}
+CRITICAL REQUIREMENTS:
+1. Each question MUST focus on a COMPLETELY DIFFERENT aspect of transparency
+2. Questions must be UNIQUE - no similar wording or concepts
+3. Use different question types: text, select, boolean, textarea
+4. Make questions specific and actionable
+
+Product Details:
+- Name: ${productData.productName || 'Unknown Product'}
+- Category: ${productData.category || 'General'}
+- Description: ${productData.description || 'No description available'}
 ${existingQuestionsText}
 
-Requirements:
-1. Generate questions that are specific to this product category and type
-2. Focus on transparency, sustainability, compliance, and quality aspects
-3. Avoid duplicating existing questions
-4. Make questions actionable and answerable
-5. Include different question types: text, select, boolean, number
+QUESTION ASSIGNMENTS:
+1. FIRST QUESTION: Focus on SUPPLY CHAIN TRANSPARENCY (ingredients, sourcing, manufacturing locations)
+2. SECOND QUESTION: Focus on ENVIRONMENTAL IMPACT (sustainability, carbon footprint, recycling)
+3. THIRD QUESTION: Focus on QUALITY ASSURANCE (testing, certifications, standards compliance)
 
-Return the response as a JSON array with this exact structure:
+IMPORTANT: Make each question completely different from the others. For example:
+- If one asks about "ingredients", another should NOT ask about "materials"
+- If one asks about "sustainability", another should NOT ask about "environmental impact"
+- Use completely different vocabulary and concepts
+
+Return ONLY valid JSON in this exact format:
 [
   {
-    "question": "Question text here",
-    "type": "text|select|boolean|number|textarea|date|email|phone",
-    "required": true|false,
-    "options": ["option1", "option2"] (only for select type),
-    "category": "transparency|sustainability|compliance|quality|safety",
-    "helpText": "Optional help text explaining why this question is important"
+    "question": "Specific question about supply chain transparency?",
+    "type": "text",
+    "required": true,
+    "category": "transparency",
+    "helpText": "This assesses supply chain transparency"
+  },
+  {
+    "question": "Specific question about environmental impact?",
+    "type": "select",
+    "required": true,
+    "options": ["Yes", "No", "Partially", "Not applicable"],
+    "category": "sustainability",
+    "helpText": "This evaluates environmental responsibility"
+  },
+  {
+    "question": "Specific question about quality assurance?",
+    "type": "boolean",
+    "required": true,
+    "category": "quality",
+    "helpText": "This ensures product quality standards"
   }
 ]
 
-Focus on generating questions that would be most valuable for assessing product transparency in the ${productData.category || 'general'} category.
+REMEMBER: All 3 questions must be COMPLETELY DIFFERENT from each other!
 `;
 
       const result = await this.model.generateContent(prompt);
@@ -235,6 +257,60 @@ Provide realistic scores based on the actual content and quality of the response
       riskLevel: "medium",
       complianceGrade: "B"
     };
+  }
+
+  /**
+   * Generate additional unique questions when we don't have enough unique ones
+   * @param {Object} productData - The product data
+   * @param {Array} existingQuestions - Already generated unique questions
+   * @returns {Promise<Array>} Array of additional questions
+   */
+  async generateAdditionalQuestions(productData, existingQuestions = []) {
+    try {
+      const existingTexts = existingQuestions.map(q => q.question).join('\n- ');
+
+      const prompt = `Based on the following product, generate 2-3 COMPLETELY DIFFERENT questions from these existing ones:
+
+Product: ${productData.productName || 'Not specified'}
+Category: ${productData.category || 'Not specified'}
+Description: ${productData.description || 'Not specified'}
+
+EXISTING QUESTIONS (DO NOT REPEAT):
+- ${existingTexts}
+
+Generate NEW questions that focus on completely different aspects. For example:
+- If existing questions are about retail channels, ask about environmental impact
+- If existing questions are about demographics, ask about manufacturing processes
+- If existing questions are about distribution, ask about quality control
+
+Return exactly 2-3 questions in this JSON format:
+[
+  {
+    "question": "Completely different question here",
+    "type": "text|select|boolean|textarea",
+    "required": true,
+    "category": "transparency|sustainability|compliance|quality|safety",
+    "helpText": "Helpful explanation"
+  }
+]`;
+
+      const result = await this.model.generateContent(prompt);
+      const response = await result.response;
+      const text = response.text();
+
+      // Extract JSON from the response
+      const jsonMatch = text.match(/\[[\s\S]*\]/);
+      if (jsonMatch) {
+        const questions = JSON.parse(jsonMatch[0]);
+        return questions.slice(0, 3); // Return max 3 questions
+      } else {
+        console.log('Could not parse additional questions from AI response');
+        return [];
+      }
+    } catch (error) {
+      console.error('Error generating additional questions:', error);
+      return [];
+    }
   }
 
   /**

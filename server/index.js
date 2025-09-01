@@ -9,6 +9,8 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
+const fs = require('fs');
+const path = require('path');
 const { initializeFirebase, admin } = require('./config/firebase');
 const pdfService = require('./services/pdfService');
 
@@ -21,6 +23,10 @@ const aiProxyRoutes = require('./routes/ai-proxy');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Ensure logs directory/file
+const logFilePath = path.join(__dirname, 'server.log');
+const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
 
 // Initialize Firebase
 const db = initializeFirebase();
@@ -35,12 +41,26 @@ app.use(helmet());
 
 // CORS configuration
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+  origin: process.env.CORS_ORIGIN || ['http://localhost:3000', 'http://localhost:3001'],
   credentials: true
 }));
 
+// Body parsing middleware (must come before logging that uses req.body)
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
 // Logging
 app.use(morgan('combined'));
+app.use(morgan('combined', { stream: logStream }));
+
+// Simple request logging to file (method, url, body)
+app.use((req, res, next) => {
+  try {
+    const line = `[${new Date().toISOString()}] ${req.method} ${req.originalUrl} body=${JSON.stringify(req.body || {})}\n`;
+    logStream.write(line);
+  } catch (_) {/* ignore */}
+  next();
+});
 
 // Rate limiting
 const limiter = rateLimit({
@@ -49,10 +69,6 @@ const limiter = rateLimit({
   message: { error: 'Too many requests from this IP, please try again later' }
 });
 app.use(limiter);
-
-// Body parsing middleware
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
@@ -82,6 +98,10 @@ app.use('/api/ai', aiProxyRoutes);
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error('Error:', err);
+  try {
+    const line = `[${new Date().toISOString()}] ERROR ${req.method} ${req.originalUrl} msg="${err.message}" stack=${err.stack}\n`;
+    logStream.write(line);
+  } catch (_) {/* ignore */}
   
   // Handle specific error types
   if (err.name === 'ValidationError') {
@@ -124,4 +144,7 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`CORS origin: ${process.env.CORS_ORIGIN || 'http://localhost:3000'}`);
+  try {
+    logStream.write(`[${new Date().toISOString()}] SERVER START port=${PORT}\n`);
+  } catch (_) {/* ignore */}
 });

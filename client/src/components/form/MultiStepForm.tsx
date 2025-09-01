@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { ChevronLeft, ChevronRight, Check, AlertCircle } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
 import { Question, FormStep, Product, QuestionAnswer } from '@/types';
 import { questionsApi, productsApi } from '@/services/api';
 import { useAuth } from '@/contexts/AuthContext';
@@ -102,7 +102,7 @@ const MultiStepForm: React.FC<MultiStepFormProps> = ({ productId, onComplete }) 
         setValue('productName', product.productName);
         setValue('category', product.category);
         setValue('description', product.description || '');
-        setValue('price', product.price || '');
+        setValue('price', product.price ? product.price.toString() : '');
         
         setSelectedCategory(product.category);
         setFormData(product);

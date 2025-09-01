@@ -4,6 +4,46 @@ const GeminiService = require('../services/geminiService');
 const router = express.Router();
 const geminiService = new GeminiService();
 
+// Simple in-memory cache to prevent duplicate requests
+const questionCache = new Map();
+const CACHE_TTL = 2 * 60 * 1000; // 2 minutes (reduced for testing)
+
+// Clear cache on startup to ensure fresh questions
+setTimeout(() => {
+  console.log('Clearing question cache for fresh generation...');
+  questionCache.clear();
+}, 1000);
+
+function getCacheKey(productData) {
+  return `${productData.productName}_${productData.category}_${productData.description}`.toLowerCase();
+}
+
+function getCachedQuestions(cacheKey) {
+  const cached = questionCache.get(cacheKey);
+  if (cached && (Date.now() - cached.timestamp) < CACHE_TTL) {
+    return cached.questions;
+  }
+  return null;
+}
+
+function setCachedQuestions(cacheKey, questions) {
+  questionCache.set(cacheKey, {
+    questions,
+    timestamp: Date.now()
+  });
+}
+
+// Calculate text similarity using Jaccard similarity
+function calculateSimilarity(text1, text2) {
+  const words1 = new Set(text1.split(' ').filter(word => word.length > 2));
+  const words2 = new Set(text2.split(' ').filter(word => word.length > 2));
+
+  const intersection = new Set([...words1].filter(word => words2.has(word)));
+  const union = new Set([...words1, ...words2]);
+
+  return intersection.size / union.size;
+}
+
 /**
  * POST /generate-questions
  * Generate dynamic follow-up questions based on product data
@@ -20,16 +60,85 @@ router.post('/generate-questions', async (req, res) => {
       });
     }
 
-    console.log('Generating questions for product:', productData.productName);
-    
+        // Check cache first
+    const cacheKey = getCacheKey(productData);
+    const cachedQuestions = getCachedQuestions(cacheKey);
+
+    if (cachedQuestions) {
+      console.log(`[CACHE] Returning cached questions for: ${productData.productName}`);
+      return res.json({
+        success: true,
+        questions: cachedQuestions,
+        productName: productData.productName,
+        category: productData.category,
+        generatedAt: new Date().toISOString(),
+        cached: true
+      });
+    }
+
+    // Generate a unique request ID to prevent duplicate processing
+    const requestId = `${productData.productName}_${productData.category}_${Date.now()}`;
+
+    console.log(`[${requestId}] Generating questions for product: ${productData.productName}`);
+
     const questions = await geminiService.generateDynamicQuestions(productData, existingQuestions);
+
+    // Advanced deduplication: check both exact text and semantic similarity
+    const uniqueQuestions = [];
+    const questionTexts = new Set();
+
+    for (const question of questions) {
+      const normalizedText = question.question.toLowerCase().trim();
+
+      // Skip if exact match already exists
+      if (questionTexts.has(normalizedText)) {
+        continue;
+      }
+
+      // Check for semantic similarity (simple keyword-based)
+      let isTooSimilar = false;
+      for (const existingText of questionTexts) {
+        const similarity = calculateSimilarity(normalizedText, existingText);
+        if (similarity > 0.7) { // 70% similarity threshold
+          isTooSimilar = true;
+          break;
+        }
+      }
+
+      if (!isTooSimilar) {
+        uniqueQuestions.push(question);
+        questionTexts.add(normalizedText);
+      }
+    }
+
+    // Ensure we have at least 3 questions
+    if (uniqueQuestions.length < 3) {
+      console.log(`[${requestId}] Only ${uniqueQuestions.length} unique questions, generating more...`);
+      // Generate additional questions if we don't have enough unique ones
+      const additionalQuestions = await geminiService.generateAdditionalQuestions(productData, uniqueQuestions);
+      for (const question of additionalQuestions) {
+        const normalizedText = question.question.toLowerCase().trim();
+        if (!questionTexts.has(normalizedText)) {
+          uniqueQuestions.push(question);
+          questionTexts.add(normalizedText);
+          if (uniqueQuestions.length >= 3) break;
+        }
+      }
+    }
+
+    // Cache the unique questions
+    setCachedQuestions(cacheKey, uniqueQuestions);
+
+    console.log(`[${requestId}] Generated ${uniqueQuestions.length} unique questions from ${questions.length} total`);
 
     res.json({
       success: true,
-      questions,
+      questions: uniqueQuestions,
       productName: productData.productName,
       category: productData.category,
-      generatedAt: new Date().toISOString()
+      generatedAt: new Date().toISOString(),
+      totalGenerated: questions.length,
+      uniqueCount: uniqueQuestions.length
     });
 
   } catch (error) {

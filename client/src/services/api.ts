@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import toast from 'react-hot-toast';
 import { ApiResponse, Product, Question, RegisterData, PaginationResponse } from '@/types';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || 'http://localhost:5000/api';
 
 // Create axios instance
 const api = axios.create({
@@ -11,6 +11,31 @@ const api = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  transformRequest: [(data) => {
+    // Ensure data is serializable and has no circular references
+    if (data && typeof data === 'object') {
+      try {
+        // Test if data can be serialized
+        JSON.stringify(data);
+        return JSON.stringify(data);
+      } catch (error) {
+        console.error('Data contains circular references:', error);
+        // Return a safe version without circular references
+        const safeData = {};
+        for (const key in data) {
+          if (data.hasOwnProperty(key)) {
+            const value = data[key];
+            if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean' ||
+                Array.isArray(value) || (value === null)) {
+              safeData[key] = value;
+            }
+          }
+        }
+        return JSON.stringify(safeData);
+      }
+    }
+    return data;
+  }],
 });
 
 // Request interceptor to add auth token
@@ -142,12 +167,22 @@ export const reportsApi = {
     return api.get('/reports');
   },
   
-  generateReport: async (data: { 
-    productIds?: string[]; 
-    reportType: string; 
-    title?: string; 
+  generateReport: async (data: {
+    productIds?: string[];
+    reportType: string;
+    title?: string;
+    quarter?: string;
   }): Promise<AxiosResponse<ApiResponse>> => {
-    return api.post('/reports/generate', data);
+    // Ensure data is clean and has no circular references
+    const cleanData = {
+      productIds: Array.isArray(data.productIds) ? data.productIds.filter(id => typeof id === 'string') : undefined,
+      reportType: typeof data.reportType === 'string' ? data.reportType : '',
+      title: typeof data.title === 'string' ? data.title : undefined,
+      quarter: typeof data.quarter === 'string' ? data.quarter : undefined
+    };
+
+    console.log('API generateReport - Clean data:', cleanData);
+    return api.post('/reports/generate', cleanData);
   },
   
   downloadReport: async (reportId: string): Promise<AxiosResponse<Blob>> => {

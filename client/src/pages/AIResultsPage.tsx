@@ -2,19 +2,29 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Button from '@/components/ui/Button';
 import { Product } from '@/types';
-import { AIQuestion, AIAnswer, TransparencyScore } from '@/services/aiApi';
+import { AIQuestion, AIAnswer } from '@/services/aiApi';
 import { useTheme } from '@/contexts/ThemeContext';
 
 interface AIResultsState {
   productData: Partial<Product>;
   questions: AIQuestion[];
   answers: AIAnswer[];
-  transparencyScore: TransparencyScore & {
-    success: boolean;
-    productName: string;
-    category: string;
-    calculatedAt: string;
-    answersAnalyzed: number;
+  transparencyScore: {
+    overallScore: number;
+    grade: string;
+    analysis: {
+      strengths: string[];
+      weaknesses: string[];
+      recommendations: string[];
+    };
+    complianceRating: {
+      environmental: string;
+      ethical: string;
+      quality: string;
+      transparency: string;
+    };
+    detailedFeedback: string;
+    aiAnalysis?: string;
   };
 }
 
@@ -52,14 +62,7 @@ const AIResultsPage: React.FC = () => {
     return 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800';
   };
 
-  const getRiskColor = (riskLevel: string) => {
-    switch (riskLevel) {
-      case 'low': return 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200';
-      case 'medium': return 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200';
-      case 'high': return 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200';
-      default: return 'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200';
-    }
-  };
+
 
   const getGradeColor = (grade: string) => {
     switch (grade) {
@@ -95,20 +98,20 @@ const AIResultsPage: React.FC = () => {
         </div>
 
         {/* Overall Score */}
-        <div className={`rounded-lg border-2 p-8 mb-8 ${getScoreBackground(transparencyScore.percentage)}`}>
+        <div className={`rounded-lg border-2 p-8 mb-8 ${getScoreBackground(transparencyScore.overallScore)}`}>
           <div className="text-center">
-            <div className={`text-6xl font-bold mb-2 ${getScoreColor(transparencyScore.percentage)}`}>
-              {transparencyScore.percentage}%
+            <div className={`text-6xl font-bold mb-2 ${getScoreColor(transparencyScore.overallScore)}`}>
+              {transparencyScore.overallScore}%
             </div>
             <div className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
               Overall Transparency Score
             </div>
             <div className="flex justify-center space-x-4">
-              <span className={`px-4 py-2 rounded-full text-sm font-medium ${getRiskColor(transparencyScore.riskLevel)}`}>
-                Risk Level: {transparencyScore.riskLevel.toUpperCase()}
+              <span className={`px-4 py-2 rounded-full text-sm font-medium ${getGradeColor(transparencyScore.grade)}`}>
+                Grade: {transparencyScore.grade}
               </span>
-              <span className={`px-4 py-2 rounded-full text-sm font-medium ${getGradeColor(transparencyScore.complianceGrade)}`}>
-                Grade: {transparencyScore.complianceGrade}
+              <span className="px-4 py-2 rounded-full text-sm font-medium bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-400">
+                {transparencyScore.detailedFeedback}
               </span>
             </div>
           </div>
@@ -118,24 +121,26 @@ const AIResultsPage: React.FC = () => {
         <div className="card mb-8">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6">📊 Score Breakdown</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {Object.entries(transparencyScore.breakdown).map(([category, data]) => (
+            {Object.entries(transparencyScore.complianceRating).map(([category, grade]) => (
               <div key={category} className="text-center">
-                <div className={`text-3xl font-bold mb-2 ${getScoreColor(data.percentage)}`}>
-                  {data.percentage}%
+                <div className={`text-3xl font-bold mb-2 ${getGradeColor(grade)}`}>
+                  {grade}
                 </div>
                 <div className="text-sm font-medium text-gray-700 dark:text-gray-300 capitalize mb-1">
                   {category}
                 </div>
                 <div className="text-xs text-gray-500 dark:text-gray-400">
-                  {data.score}/{data.maxScore} points
+                  Compliance Grade
                 </div>
                 <div className="w-full bg-gray-200 dark:bg-secondary-700 rounded-full h-2 mt-2">
-                  <div 
+                  <div
                     className={`h-2 rounded-full ${
-                      data.percentage >= 80 ? 'bg-green-500' :
-                      data.percentage >= 60 ? 'bg-yellow-500' : 'bg-red-500'
+                      grade === 'A' ? 'bg-green-500' :
+                      grade === 'B' ? 'bg-green-400' :
+                      grade === 'C' ? 'bg-yellow-500' :
+                      grade === 'D' ? 'bg-orange-500' : 'bg-red-500'
                     }`}
-                    style={{ width: `${data.percentage}%` }}
+                    style={{ width: `${grade === 'A' ? 100 : grade === 'B' ? 80 : grade === 'C' ? 60 : grade === 'D' ? 40 : 20}%` }}
                   ></div>
                 </div>
               </div>
@@ -152,7 +157,7 @@ const AIResultsPage: React.FC = () => {
               Strengths
             </h3>
             <ul className="space-y-2">
-              {transparencyScore.strengths.map((strength, index) => (
+              {transparencyScore.analysis.strengths.map((strength, index) => (
                 <li key={index} className="text-sm text-gray-700 dark:text-gray-300 flex items-start">
                   <span className="text-green-500 dark:text-green-400 mr-2 mt-1">•</span>
                   {strength}
@@ -168,10 +173,10 @@ const AIResultsPage: React.FC = () => {
               Areas for Improvement
             </h3>
             <ul className="space-y-2">
-              {transparencyScore.improvements.map((improvement, index) => (
+              {transparencyScore.analysis.weaknesses.map((weakness, index) => (
                 <li key={index} className="text-sm text-gray-700 dark:text-gray-300 flex items-start">
                   <span className="text-yellow-500 dark:text-yellow-400 mr-2 mt-1">•</span>
-                  {improvement}
+                  {weakness}
                 </li>
               ))}
             </ul>
@@ -184,7 +189,7 @@ const AIResultsPage: React.FC = () => {
               Recommendations
             </h3>
             <ul className="space-y-2">
-              {transparencyScore.recommendations.map((recommendation, index) => (
+              {transparencyScore.analysis.recommendations.map((recommendation, index) => (
                 <li key={index} className="text-sm text-gray-700 dark:text-gray-300 flex items-start">
                   <span className="text-blue-500 dark:text-blue-400 mr-2 mt-1">•</span>
                   {recommendation}
@@ -235,19 +240,29 @@ const AIResultsPage: React.FC = () => {
           <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Assessment Details</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-600 dark:text-gray-400">
             <div>
-              <span className="font-medium text-gray-700 dark:text-gray-300">Questions Answered:</span> {transparencyScore.answersAnalyzed}
+              <span className="font-medium text-gray-700 dark:text-gray-300">Questions Answered:</span> {answers.length}
             </div>
             <div>
               <span className="font-medium text-gray-700 dark:text-gray-300">Total Questions:</span> {questions.length}
             </div>
             <div>
-              <span className="font-medium text-gray-700 dark:text-gray-300">Assessment Date:</span> {new Date(transparencyScore.calculatedAt).toLocaleDateString()}
+              <span className="font-medium text-gray-700 dark:text-gray-300">Assessment Date:</span> {new Date().toLocaleDateString()}
             </div>
             <div>
-              <span className="font-medium text-gray-700 dark:text-gray-300">Powered by:</span> Google Gemini AI
+              <span className="font-medium text-gray-700 dark:text-gray-300">Powered by:</span> AI Analysis Engine
             </div>
           </div>
         </div>
+
+        {/* AI Analysis */}
+        {transparencyScore.aiAnalysis && (
+          <div className="card mb-8">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">🤖 AI Analysis</h2>
+            <div className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              {transparencyScore.aiAnalysis}
+            </div>
+          </div>
+        )}
 
         {/* Actions */}
         <div className="flex justify-between">
@@ -278,3 +293,4 @@ const AIResultsPage: React.FC = () => {
 };
 
 export default AIResultsPage;
+

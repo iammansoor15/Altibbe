@@ -171,7 +171,7 @@ const AIDemo: React.FC = () => {
                   {question.type === 'select' && question.options ? (
                     <select
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      value={answers[index]?.answer || ''}
+                      value={answers[index]?.answer?.toString() || ''}
                       onChange={(e) => updateAnswer(index, e.target.value)}
                     >
                       <option value="">Select an option</option>
@@ -183,7 +183,7 @@ const AIDemo: React.FC = () => {
                     <textarea
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       rows={3}
-                      value={answers[index]?.answer || ''}
+                      value={answers[index]?.answer?.toString() || ''}
                       onChange={(e) => updateAnswer(index, e.target.value)}
                       placeholder="Enter your answer..."
                     />
@@ -216,7 +216,7 @@ const AIDemo: React.FC = () => {
                     <input
                       type={question.type}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      value={answers[index]?.answer || ''}
+                      value={answers[index]?.answer?.toString() || ''}
                       onChange={(e) => updateAnswer(index, e.target.value)}
                       placeholder="Enter your answer..."
                     />

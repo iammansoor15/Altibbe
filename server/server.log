@@ -1,0 +1,714 @@
+[2025-08-31T21:52:14.121Z] SERVER START port=5000
+[2025-08-31T21:55:15.728Z] POST /api/auth/register body={}
+::1 - - [31/Aug/2025:21:55:15 +0000] "POST /api/auth/register HTTP/1.1" 400 97 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T21:55:21.246Z] POST /api/auth/register body={}
+::1 - - [31/Aug/2025:21:55:21 +0000] "POST /api/auth/register HTTP/1.1" 400 66 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T21:55:31.988Z] POST /api/auth/register body={}
+::1 - - [31/Aug/2025:21:55:34 +0000] "POST /api/auth/register HTTP/1.1" 500 274 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T21:55:57.265Z] GET /api/health body={}
+::1 - - [31/Aug/2025:21:55:57 +0000] "GET /api/health HTTP/1.1" 200 82 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T21:56:03.906Z] POST /api/auth/register body={}
+::1 - - [31/Aug/2025:21:56:04 +0000] "POST /api/auth/register HTTP/1.1" 500 274 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T21:56:44.912Z] SERVER START port=5000
+[2025-08-31T21:57:08.417Z] POST /api/auth/register body={"firstName":"Test","lastName":"User","email":"test@altibbe.com","password":"test12345","department":"IT"}
+::1 - - [31/Aug/2025:21:57:11 +0000] "POST /api/auth/register HTTP/1.1" 500 274 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T21:57:23.808Z] GET /api/debug body={}
+::1 - - [31/Aug/2025:21:57:23 +0000] "GET /api/debug HTTP/1.1" 200 72 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T21:58:29.196Z] SERVER START port=5000
+[2025-08-31T21:58:40.739Z] POST /api/auth/register body={"firstName":"Test","lastName":"User","email":"test@altibbe.com","password":"test12345","department":"IT"}
+::1 - - [31/Aug/2025:21:58:43 +0000] "POST /api/auth/register HTTP/1.1" 201 461 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T21:58:49.818Z] POST /api/auth/register body={"firstName":"Test","lastName":"User","email":"test@altibbe.com","password":"test12345","department":"IT"}
+::1 - - [31/Aug/2025:21:58:50 +0000] "POST /api/auth/register HTTP/1.1" 201 461 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T21:58:56.465Z] POST /api/auth/login body={"email":"test@altibbe.com","password":"test12345"}
+::1 - - [31/Aug/2025:21:58:56 +0000] "POST /api/auth/login HTTP/1.1" 200 449 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T21:59:10.372Z] POST /api/auth/login body={"email":"test@altibbe.com","password":"test12345"}
+::1 - - [31/Aug/2025:21:59:10 +0000] "POST /api/auth/login HTTP/1.1" 200 449 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T21:59:40.576Z] POST /api/products body={"productName":"Test Product","category":"Electronics","description":"A test product for demo","price":99.99,"status":"draft"}
+::1 - - [31/Aug/2025:21:59:41 +0000] "POST /api/products HTTP/1.1" 403 36 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T22:00:17.010Z] SERVER START port=5000
+[2025-08-31T22:00:58.766Z] POST /api/auth/login body={"email":"test@altibbe.com","password":"test12345"}
+::1 - - [31/Aug/2025:22:01:01 +0000] "POST /api/auth/login HTTP/1.1" 200 449 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T22:01:01.519Z] POST /api/products body={"productName":"Test Product","category":"Electronics","description":"A test product for demo","price":99.99,"status":"draft"}
+::1 - - [31/Aug/2025:22:01:02 +0000] "POST /api/products HTTP/1.1" 500 36 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T22:02:07.666Z] SERVER START port=5000
+[2025-08-31T22:02:55.271Z] POST /api/auth/login body={"email":"test@altibbe.com","password":"test12345"}
+::1 - - [31/Aug/2025:22:02:57 +0000] "POST /api/auth/login HTTP/1.1" 200 449 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T22:02:57.847Z] POST /api/products body={"productName":"Test Product","category":"Electronics","description":"A test product for demo","price":99.99,"status":"draft"}
+::1 - - [31/Aug/2025:22:02:58 +0000] "POST /api/products HTTP/1.1" 201 95 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T22:02:58.280Z] GET /api/products/mock-product-1756677778275/pdf body={}
+::1 - - [31/Aug/2025:22:02:58 +0000] "GET /api/products/mock-product-1756677778275/pdf HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-08-31T22:03:44.790Z] SERVER START port=5000
+[2025-08-31T22:03:59.105Z] POST /api/auth/login body={"email":"mansoor@gmail.com","password":"mansoor123"}
+[2025-08-31T22:04:04.124Z] GET /api/health body={}
+::1 - - [31/Aug/2025:22:04:04 +0000] "GET /api/health HTTP/1.1" 200 82 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+::1 - - [31/Aug/2025:22:04:06 +0000] "POST /api/auth/login HTTP/1.1" 401 77 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:04:15.515Z] POST /api/auth/login body={"email":"mansoor@gmail.com","password":"mansoor123"}
+::1 - - [31/Aug/2025:22:04:15 +0000] "POST /api/auth/login HTTP/1.1" 401 77 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:04:46.765Z] POST /api/auth/register body={"firstName":"amazon","lastName":"hero","email":"amazon@gmail.com","password":"amazon123","department":"Sales","phone":"09494978146"}
+::1 - - [31/Aug/2025:22:04:47 +0000] "POST /api/auth/register HTTP/1.1" 201 469 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:04:47.155Z] GET /api/products?limit=10 body={}
+::1 - - [31/Aug/2025:22:04:48 +0000] "GET /api/products?limit=10 HTTP/1.1" 500 36 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:04:49.330Z] GET /api/products?limit=10 body={}
+::1 - - [31/Aug/2025:22:04:49 +0000] "GET /api/products?limit=10 HTTP/1.1" 500 36 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:04:55.652Z] GET /api/questions/categories body={}
+::1 - - [31/Aug/2025:22:04:55 +0000] "GET /api/questions/categories HTTP/1.1" 200 85 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:04:56.005Z] GET /api/questions/categories body={}
+::1 - - [31/Aug/2025:22:04:57 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:05:04.349Z] GET /api/questions/category/Healthcare body={}
+::1 - - [31/Aug/2025:22:05:04 +0000] "GET /api/questions/category/Healthcare HTTP/1.1" 500 46 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:05:13.782Z] POST /api/products body={"userId":"mock-user-1756677887089","productName":"keys","category":"Healthcare","description":"tgis is jeys","price":67,"questions":[],"status":"submitted","submittedAt":"2025-08-31T22:05:13.771Z"}
+::1 - - [31/Aug/2025:22:05:14 +0000] "POST /api/products HTTP/1.1" 201 95 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:05:14.176Z] POST /api/ai/generate-questions body={"productData":{"userId":"mock-user-1756677887089","productName":"keys","category":"Healthcare","description":"tgis is jeys","price":67,"questions":[],"status":"submitted","submittedAt":"2025-08-31T22:05:13.771Z"}}
+[2025-08-31T22:05:14.205Z] POST /api/ai/generate-questions body={"productData":{"userId":"mock-user-1756677887089","productName":"keys","category":"Healthcare","description":"tgis is jeys","price":67,"questions":[],"status":"submitted","submittedAt":"2025-08-31T22:05:13.771Z"}}
+::1 - - [31/Aug/2025:22:05:18 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 2045 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [31/Aug/2025:22:05:19 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 1911 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:05:37.866Z] POST /api/ai/transparency-score body={"productData":{"userId":"mock-user-1756677887089","productName":"keys","category":"Healthcare","description":"tgis is jeys","price":67,"questions":[],"status":"submitted","submittedAt":"2025-08-31T22:05:13.771Z"},"answers":[{"question":"What specific medical function or purpose do these 'keys' serve in the healthcare context?  Please provide detailed specifications.","answer":"fkjdfakj"},{"question":"Are these keys made with materials that are free from known allergens or toxins, and are compatible with sterilization methods used in healthcare settings?","answer":"true"},{"question":"Which regulatory bodies (e.g., FDA, ISO) have approved or certified these keys for use in healthcare? Please provide relevant certification numbers.","answer":"fkjhaf"},{"question":"What is the source and manufacturing location of the materials used in these keys?  Please also specify the manufacturing process.","answer":"fnkhfka"}]}
+::1 - - [31/Aug/2025:22:05:42 +0000] "POST /api/ai/transparency-score HTTP/1.1" 200 1020 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:05:45.113Z] GET /api/questions/categories body={}
+::1 - - [31/Aug/2025:22:05:45 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:05:45.465Z] GET /api/questions/categories body={}
+::1 - - [31/Aug/2025:22:05:46 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:05:48.329Z] GET /api/products?limit=10 body={}
+::1 - - [31/Aug/2025:22:05:48 +0000] "GET /api/products?limit=10 HTTP/1.1" 500 36 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:05:49.746Z] GET /api/products?limit=10 body={}
+::1 - - [31/Aug/2025:22:05:50 +0000] "GET /api/products?limit=10 HTTP/1.1" 500 36 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:05:58.925Z] GET /api/products?limit=50 body={}
+[2025-08-31T22:05:58.931Z] GET /api/reports body={}
+::1 - - [31/Aug/2025:22:05:59 +0000] "GET /api/products?limit=50 HTTP/1.1" 500 36 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:06:00.287Z] GET /api/products?limit=50 body={}
+::1 - - [31/Aug/2025:22:06:00 +0000] "GET /api/reports HTTP/1.1" 500 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [31/Aug/2025:22:06:00 +0000] "GET /api/products?limit=50 HTTP/1.1" 500 36 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:06:01.520Z] GET /api/reports body={}
+::1 - - [31/Aug/2025:22:06:01 +0000] "GET /api/reports HTTP/1.1" 500 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:06:02.452Z] POST /api/reports/generate body={"reportType":"all-products","title":"Complete Product Transparency Report"}
+::1 - - [31/Aug/2025:22:06:03 +0000] "POST /api/reports/generate HTTP/1.1" 500 37 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-08-31T22:06:06.936Z] POST /api/reports/generate body={"reportType":"all-products","title":"Complete Product Transparency Report"}
+::1 - - [31/Aug/2025:22:06:07 +0000] "POST /api/reports/generate HTTP/1.1" 500 37 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:09:00.976Z] SERVER START port=5000
+[2025-09-01T03:09:21.049Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:03:09:23 +0000] "GET /api/auth/verify HTTP/1.1" 403 277 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:09:23.787Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:03:09:24 +0000] "GET /api/auth/verify HTTP/1.1" 403 277 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:10:34.710Z] POST /api/auth/register body={"firstName":"Eesa Mansoor","lastName":"Patan","email":"eesamansoorpatan@gmail.com","password":"mansoor123","department":"","phone":"9494978146"}
+::1 - - [01/Sep/2025:03:10:35 +0000] "POST /api/auth/register HTTP/1.1" 201 503 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:10:35.221Z] GET /api/products?limit=10 body={}
+::1 - - [01/Sep/2025:03:10:36 +0000] "GET /api/products?limit=10 HTTP/1.1" 500 36 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:10:37.277Z] GET /api/products?limit=10 body={}
+::1 - - [01/Sep/2025:03:10:37 +0000] "GET /api/products?limit=10 HTTP/1.1" 500 36 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:14:16.729Z] SERVER START port=5000
+[2025-09-01T03:15:30.588Z] SERVER START port=5000
+[2025-09-01T03:27:27.022Z] POST /api/auth/register body={"firstName":"Test","lastName":"User","email":"test@example.com","password":"password123","department":"IT"}
+::1 - - [01/Sep/2025:03:27:29 +0000] "POST /api/auth/register HTTP/1.1" 201 461 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T03:48:35.828Z] POST /api/auth/register body={"firstName":"Eesa Mansoor","lastName":"Patan","email":"eesamansoorpatan@gmail.com","password":"mansoor123","department":"Engineering","phone":"9494978146"}
+::1 - - [01/Sep/2025:03:48:39 +0000] "POST /api/auth/register HTTP/1.1" 201 514 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:48:39.645Z] GET /api/products?limit=10 body={}
+::1 - - [01/Sep/2025:03:48:39 +0000] "GET /api/products?limit=10 HTTP/1.1" 500 36 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:48:41.708Z] GET /api/products?limit=10 body={}
+::1 - - [01/Sep/2025:03:48:42 +0000] "GET /api/products?limit=10 HTTP/1.1" 500 36 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:49:34.293Z] SERVER START port=5000
+[2025-09-01T03:49:36.547Z] POST /api/auth/register body={"firstName":"John","lastName":"Doe","email":"john.doe@example.com","password":"password123","department":"Engineering"}
+::1 - - [01/Sep/2025:03:49:38 +0000] "POST /api/auth/register HTTP/1.1" 201 477 "-" "axios/1.11.0"
+[2025-09-01T03:49:38.982Z] POST /api/auth/login body={"email":"john.doe@example.com","password":"password123"}
+::1 - - [01/Sep/2025:03:49:39 +0000] "POST /api/auth/login HTTP/1.1" 401 77 "-" "axios/1.11.0"
+[2025-09-01T03:50:15.571Z] GET /api/health body={}
+::1 - - [01/Sep/2025:03:50:15 +0000] "GET /api/health HTTP/1.1" 200 82 "-" "axios/1.11.0"
+[2025-09-01T03:50:15.580Z] POST /api/auth/register body={"firstName":"John","lastName":"Doe","email":"john.doe.1756698615573@example.com","password":"password123","department":"Engineering"}
+::1 - - [01/Sep/2025:03:50:15 +0000] "POST /api/auth/register HTTP/1.1" 201 510 "-" "axios/1.11.0"
+[2025-09-01T03:50:15.969Z] POST /api/auth/login body={"email":"john.doe.1756698615573@example.com","password":"password123"}
+::1 - - [01/Sep/2025:03:50:17 +0000] "POST /api/auth/login HTTP/1.1" 401 77 "-" "axios/1.11.0"
+[2025-09-01T03:50:17.308Z] POST /api/auth/login body={"email":"test@altibbe.com","password":"test12345"}
+::1 - - [01/Sep/2025:03:50:17 +0000] "POST /api/auth/login HTTP/1.1" 200 449 "-" "axios/1.11.0"
+[2025-09-01T03:50:17.687Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:03:50:18 +0000] "GET /api/auth/verify HTTP/1.1" 403 277 "-" "axios/1.11.0"
+[2025-09-01T03:52:56.531Z] POST /api/auth/register body={"firstName":"Alice","lastName":"Smith","email":"alice.smith.1756698776501@example.com","password":"password123","department":"Marketing"}
+::1 - - [01/Sep/2025:03:52:56 +0000] "POST /api/auth/register HTTP/1.1" 429 68 "-" "axios/1.11.0"
+[2025-09-01T03:57:29.848Z] SERVER START port=5000
+[2025-09-01T03:57:42.485Z] POST /api/auth/register body={"firstName":"Alice","lastName":"Smith","email":"alice.smith.1756699062446@example.com","password":"password123","department":"Marketing"}
+::1 - - [01/Sep/2025:03:57:45 +0000] "POST /api/auth/register HTTP/1.1" 201 503 "-" "axios/1.11.0"
+[2025-09-01T03:57:45.260Z] POST /api/auth/login body={"email":"alice.smith.1756699062446@example.com","password":"password123"}
+::1 - - [01/Sep/2025:03:57:47 +0000] "POST /api/auth/login HTTP/1.1" 200 491 "-" "axios/1.11.0"
+[2025-09-01T03:57:47.299Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:03:57:48 +0000] "GET /api/auth/verify HTTP/1.1" 200 177 "-" "axios/1.11.0"
+[2025-09-01T03:57:48.126Z] POST /api/auth/register body={"firstName":"Alice","lastName":"Smith","email":"alice.smith.1756699062446@example.com","password":"password123","department":"Marketing"}
+::1 - - [01/Sep/2025:03:57:48 +0000] "POST /api/auth/register HTTP/1.1" 409 47 "-" "axios/1.11.0"
+[2025-09-01T03:57:48.836Z] POST /api/auth/login body={"email":"alice.smith.1756699062446@example.com","password":"wrongpassword"}
+::1 - - [01/Sep/2025:03:57:49 +0000] "POST /api/auth/login HTTP/1.1" 401 31 "-" "axios/1.11.0"
+[2025-09-01T03:57:49.900Z] POST /api/auth/login body={"email":"test@altibbe.com","password":"test12345"}
+::1 - - [01/Sep/2025:03:57:50 +0000] "POST /api/auth/login HTTP/1.1" 401 31 "-" "axios/1.11.0"
+[2025-09-01T03:58:14.763Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:03:58:15 +0000] "GET /api/auth/verify HTTP/1.1" 401 25 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:58:15.128Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:03:58:15 +0000] "GET /api/auth/verify HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:58:23.275Z] POST /api/auth/register body={"firstName":"John","lastName":"Demo","email":"john.demo.1756699103247@altibbe.com","password":"SecurePass123!","department":"Engineering"}
+::1 - - [01/Sep/2025:03:58:24 +0000] "POST /api/auth/register HTTP/1.1" 201 495 "-" "axios/1.11.0"
+[2025-09-01T03:58:24.806Z] POST /api/auth/login body={"email":"john.demo.1756699103247@altibbe.com","password":"SecurePass123!"}
+::1 - - [01/Sep/2025:03:58:26 +0000] "POST /api/auth/login HTTP/1.1" 200 483 "-" "axios/1.11.0"
+[2025-09-01T03:58:26.355Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:03:58:27 +0000] "GET /api/auth/verify HTTP/1.1" 200 175 "-" "axios/1.11.0"
+[2025-09-01T03:58:27.223Z] GET /api/health body={}
+::1 - - [01/Sep/2025:03:58:27 +0000] "GET /api/health HTTP/1.1" 200 82 "-" "axios/1.11.0"
+[2025-09-01T03:59:32.692Z] POST /api/auth/register body={"firstName":"Eesa Mansoor","lastName":"Patan","email":"eesamansoorpatan@gmail.com","password":"mansoor123","department":"Engineering","phone":"9494978146"}
+::1 - - [01/Sep/2025:03:59:34 +0000] "POST /api/auth/register HTTP/1.1" 201 495 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:59:34.274Z] GET /api/products?limit=10 body={}
+::1 - - [01/Sep/2025:03:59:35 +0000] "GET /api/products?limit=10 HTTP/1.1" 200 3933 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:59:44.075Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:03:59:44 +0000] "GET /api/questions/categories HTTP/1.1" 200 17 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:59:44.444Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:03:59:45 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T03:59:53.542Z] GET /api/questions/category/Retail body={}
+::1 - - [01/Sep/2025:03:59:53 +0000] "GET /api/questions/category/Retail HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:00:07.015Z] POST /api/products body={"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Gaming pad","category":"Retail","description":"this is a aming pad","price":1000,"questions":[],"status":"submitted","submittedAt":"2025-09-01T04:00:07.008Z"}
+::1 - - [01/Sep/2025:04:00:08 +0000] "POST /api/products HTTP/1.1" 201 77 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:00:08.766Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Gaming pad","category":"Retail","description":"this is a aming pad","price":1000,"questions":[],"status":"submitted","submittedAt":"2025-09-01T04:00:07.008Z"}}
+[2025-09-01T04:00:08.768Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Gaming pad","category":"Retail","description":"this is a aming pad","price":1000,"questions":[],"status":"submitted","submittedAt":"2025-09-01T04:00:07.008Z"}}
+::1 - - [01/Sep/2025:04:00:09 +0000] "POST /api/ai/generate-questions HTTP/1.1" 503 130 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:00:10 +0000] "POST /api/ai/generate-questions HTTP/1.1" 503 130 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:00:13.676Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Gaming pad","category":"Retail","description":"this is a aming pad","price":1000,"questions":[],"status":"submitted","submittedAt":"2025-09-01T04:00:07.008Z"}}
+::1 - - [01/Sep/2025:04:00:14 +0000] "POST /api/ai/generate-questions HTTP/1.1" 503 130 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:04:32.286Z] SERVER START port=5000
+[2025-09-01T04:04:58.068Z] POST /api/auth/login body={"email":"test@altibbe.com","password":"test12345"}
+::1 - - [01/Sep/2025:04:05:00 +0000] "POST /api/auth/login HTTP/1.1" 401 31 "-" "axios/1.11.0"
+[2025-09-01T04:05:07.113Z] POST /api/auth/register body={"firstName":"Test","lastName":"User","email":"test@altibbe.com","password":"test12345","department":"IT"}
+::1 - - [01/Sep/2025:04:05:09 +0000] "POST /api/auth/register HTTP/1.1" 201 442 "-" "axios/1.11.0"
+[2025-09-01T04:05:35.893Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:05:36 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:05:36.316Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:05:37 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:05:53.952Z] POST /api/auth/login body={"email":"test@altibbe.com","password":"test12345"}
+::1 - - [01/Sep/2025:04:05:55 +0000] "POST /api/auth/login HTTP/1.1" 200 430 "-" "axios/1.11.0"
+[2025-09-01T04:05:55.725Z] GET /api/products/meta/options body={}
+::1 - - [01/Sep/2025:04:05:55 +0000] "GET /api/products/meta/options HTTP/1.1" 200 2712 "-" "axios/1.11.0"
+[2025-09-01T04:05:55.730Z] POST /api/products/seed/demo body={}
+::1 - - [01/Sep/2025:04:05:58 +0000] "POST /api/products/seed/demo HTTP/1.1" 200 57 "-" "axios/1.11.0"
+[2025-09-01T04:05:58.256Z] GET /api/products?search=iphone body={}
+::1 - - [01/Sep/2025:04:06:00 +0000] "GET /api/products?search=iphone HTTP/1.1" 200 601 "-" "axios/1.11.0"
+[2025-09-01T04:06:00.074Z] POST /api/ai/generate-questions body={"productData":{"productName":"iPhone 15 Pro","productType":"Smartphone","category":"Electronics","description":"Latest iPhone with advanced camera system and titanium design"}}
+::1 - - [01/Sep/2025:04:06:02 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 634 "-" "axios/1.11.0"
+[2025-09-01T04:06:02.450Z] GET /api/products?category=Electronics&productType=Smartphone body={}
+::1 - - [01/Sep/2025:04:06:04 +0000] "GET /api/products?category=Electronics&productType=Smartphone HTTP/1.1" 200 601 "-" "axios/1.11.0"
+[2025-09-01T04:08:41.032Z] SERVER START port=5000
+[2025-09-01T04:08:55.667Z] GET /api/health body={}
+::1 - - [01/Sep/2025:04:08:55 +0000] "GET /api/health HTTP/1.1" 200 82 "-" "axios/1.11.0"
+[2025-09-01T04:08:55.681Z] GET /api/products/meta/options body={}
+::1 - - [01/Sep/2025:04:08:55 +0000] "GET /api/products/meta/options HTTP/1.1" 200 2712 "-" "axios/1.11.0"
+[2025-09-01T04:09:05.725Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:09:08 +0000] "GET /api/auth/verify HTTP/1.1" 200 175 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:09:08.108Z] GET /api/auth/verify body={}
+[2025-09-01T04:09:08.122Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:09:08 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:09:09 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:09:09.850Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:09:10 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:09:15.137Z] GET /api/questions/category/Technology body={}
+::1 - - [01/Sep/2025:04:09:15 +0000] "GET /api/questions/category/Technology HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:09:28.531Z] POST /api/products body={"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Cloth","category":"Technology","description":"this is a cloth","price":100,"questions":[],"status":"submitted","submittedAt":"2025-09-01T04:09:28.516Z"}
+::1 - - [01/Sep/2025:04:09:30 +0000] "POST /api/products HTTP/1.1" 201 77 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:09:30.466Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Cloth","category":"Technology","description":"this is a cloth","price":100,"questions":[],"status":"submitted","submittedAt":"2025-09-01T04:09:28.516Z"}}
+[2025-09-01T04:09:30.469Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Cloth","category":"Technology","description":"this is a cloth","price":100,"questions":[],"status":"submitted","submittedAt":"2025-09-01T04:09:28.516Z"}}
+::1 - - [01/Sep/2025:04:09:32 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 623 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:09:34 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 623 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:09:51.943Z] POST /api/ai/transparency-score body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Cloth","category":"Technology","description":"this is a cloth","price":100,"questions":[],"status":"submitted","submittedAt":"2025-09-01T04:09:28.516Z"},"answers":[{"question":"What is the main benefit of Cloth?","answer":"anything"},{"question":"Is this product environmentally friendly?","answer":"true"},{"question":"What is the expected lifespan of this product?","answer":"3-5 years"}]}
+::1 - - [01/Sep/2025:04:09:52 +0000] "POST /api/ai/transparency-score HTTP/1.1" 500 131 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:09:54.381Z] POST /api/ai/transparency-score body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Cloth","category":"Technology","description":"this is a cloth","price":100,"questions":[],"status":"submitted","submittedAt":"2025-09-01T04:09:28.516Z"},"answers":[{"question":"What is the main benefit of Cloth?","answer":"anything"},{"question":"Is this product environmentally friendly?","answer":"true"},{"question":"What is the expected lifespan of this product?","answer":"3-5 years"}]}
+::1 - - [01/Sep/2025:04:09:54 +0000] "POST /api/ai/transparency-score HTTP/1.1" 500 131 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:10:05.980Z] POST /api/ai/transparency-score body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Cloth","category":"Technology","description":"this is a cloth","price":100,"questions":[],"status":"submitted","submittedAt":"2025-09-01T04:09:28.516Z"},"answers":[{"question":"What is the main benefit of Cloth?","answer":"anything u use it for"},{"question":"Is this product environmentally friendly?","answer":"true"},{"question":"What is the expected lifespan of this product?","answer":"3-5 years"}]}
+::1 - - [01/Sep/2025:04:10:06 +0000] "POST /api/ai/transparency-score HTTP/1.1" 500 131 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:10:12.660Z] POST /api/ai/transparency-score body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Cloth","category":"Technology","description":"this is a cloth","price":100,"questions":[],"status":"submitted","submittedAt":"2025-09-01T04:09:28.516Z"},"answers":[{"question":"What is the main benefit of Cloth?","answer":"anything u use it for"},{"question":"Is this product environmentally friendly?","answer":"true"},{"question":"What is the expected lifespan of this product?","answer":"3-5 years"}]}
+::1 - - [01/Sep/2025:04:10:13 +0000] "POST /api/ai/transparency-score HTTP/1.1" 500 131 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:10:46.193Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:10:46 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:10:46.611Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:10:46 +0000] "GET /api/questions/categories HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:10:47.182Z] GET /api/products?limit=10 body={}
+::1 - - [01/Sep/2025:04:10:49 +0000] "GET /api/products?limit=10 HTTP/1.1" 200 4252 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:10:54.516Z] GET /api/products?limit=50 body={}
+[2025-09-01T04:10:54.518Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:04:10:56 +0000] "GET /api/products?limit=50 HTTP/1.1" 200 8519 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:10:56 +0000] "GET /api/reports HTTP/1.1" 200 14800 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:10:57.243Z] POST /api/reports/generate body={"productIds":["0PLHZSly627MgTsMgbIJ","0jwTehT4v3k56NwI8PEf","0lfYl5gHSIBGIqVr73iE","1tfwRDwkZ5OhWF4pvhgY","3Its9TXuh8clXAViKn8m","4Vwyuf6bRTstPuWCR7WX","4vAWl3w7Y7H7TZT3aW5r","7HHXyzfvB5E2W8vwdPCU","7ZJKtURuFvmBRWBh8AVn","8HfX7eXlaGrJofjawLkI","CN2oXSN2qXHjizeOX941","CpLHx9wm9dw5ccaWFv9w","FCRWpv60RqpwDygBWnWT","S6rsB1EWiRZIXoBTwUGA","ZGn5H3GVxyEO1Mmwn32g","fuyWXwM8430BUIwmmwX9","mKFUDFNRtVaLSIgjpmaH","r7PYGudJdM7Y0r8CIk0U","tBu1Ypr9Bnrn3FjDPar4","vIxEXyYjNWJIOW5qT9BH","y9Rf9CFM4OlwmWtyxqQ6"],"reportType":"all-products","title":"Complete Product Transparency Report"}
+[2025-09-01T04:11:08.150Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:11:09 +0000] "GET /api/questions/categories HTTP/1.1" 200 17 "-" "axios/1.11.0"
+[2025-09-01T04:11:10.453Z] GET /api/reports/8uRR9ctmpU6yBdIVIdkF/download body={}
+::1 - - [01/Sep/2025:04:11:11 +0000] "GET /api/reports/8uRR9ctmpU6yBdIVIdkF/download HTTP/1.1" 200 313 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:11:17 +0000] "POST /api/reports/generate HTTP/1.1" 201 2604 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:11:17.378Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:04:11:18 +0000] "GET /api/reports HTTP/1.1" 200 17340 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:11:36.172Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:11:36 +0000] "GET /api/questions/categories HTTP/1.1" 200 145 "-" "axios/1.11.0"
+[2025-09-01T04:11:42.042Z] POST /api/ai/transparency-score body={"productData":{"productName":"Test Product"},"answers":[{"question":"Test?","answer":"Yes","type":"boolean"}]}
+::1 - - [01/Sep/2025:04:11:42 +0000] "POST /api/ai/transparency-score HTTP/1.1" 401 33 "-" "axios/1.11.0"
+[2025-09-01T04:17:15.487Z] POST /api/auth/login body={"email":"test@altibbe.com","password":"test12345"}
+::1 - - [01/Sep/2025:04:17:17 +0000] "POST /api/auth/login HTTP/1.1" 200 430 "-" "axios/1.11.0"
+[2025-09-01T04:17:17.480Z] POST /api/ai/transparency-score body={"productData":{"productName":"iPhone 15 Pro","category":"Electronics & Gadgets"},"answers":[{"question":"What is the screen size?","answer":"6.1 inches","type":"text"},{"question":"Does it support 5G?","answer":"true","type":"boolean"},{"question":"What is the storage capacity?","answer":"128GB","type":"select"}]}
+::1 - - [01/Sep/2025:04:17:18 +0000] "POST /api/ai/transparency-score HTTP/1.1" 500 131 "-" "axios/1.11.0"
+[2025-09-01T04:17:42.001Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:17:43 +0000] "GET /api/questions/categories HTTP/1.1" 200 420 "-" "axios/1.11.0"
+[2025-09-01T04:18:03.820Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:18:04 +0000] "GET /api/questions/categories HTTP/1.1" 200 420 "-" "axios/1.11.0"
+[2025-09-01T04:18:23.353Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:18:23 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:18:23.756Z] GET /api/auth/verify body={}
+[2025-09-01T04:18:23.781Z] GET /api/products?limit=50 body={}
+[2025-09-01T04:18:23.782Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:04:18:25 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:18:25 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:18:26 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:18:36.901Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:18:37 +0000] "GET /api/questions/categories HTTP/1.1" 200 420 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:18:37.864Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:18:39 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:18:50.453Z] GET /api/questions/category/Books%20&%20Media body={}
+::1 - - [01/Sep/2025:04:18:50 +0000] "GET /api/questions/category/Books%20&%20Media HTTP/1.1" 200 1012 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:19:08.289Z] POST /api/products body={"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Books","category":"Books & Media","description":"this is a book","price":100,"questions":[{"questionId":"dCOOnP5jYBXoVqdYM52B","question":"What type of publication is this?","answer":"Physical Book","type":"select"},{"questionId":"wUOOtgvyndk2ApvO6cl1","question":"What is the target audience for this content?","answer":"Children","type":"select"}],"status":"submitted","submittedAt":"2025-09-01T04:19:08.283Z"}
+::1 - - [01/Sep/2025:04:19:10 +0000] "POST /api/products HTTP/1.1" 201 77 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:19:10.071Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Books","category":"Books & Media","description":"this is a book","price":100,"questions":[{"questionId":"dCOOnP5jYBXoVqdYM52B","question":"What type of publication is this?","answer":"Physical Book","type":"select"},{"questionId":"wUOOtgvyndk2ApvO6cl1","question":"What is the target audience for this content?","answer":"Children","type":"select"}],"status":"submitted","submittedAt":"2025-09-01T04:19:08.283Z"}}
+[2025-09-01T04:19:10.075Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Books","category":"Books & Media","description":"this is a book","price":100,"questions":[{"questionId":"dCOOnP5jYBXoVqdYM52B","question":"What type of publication is this?","answer":"Physical Book","type":"select"},{"questionId":"wUOOtgvyndk2ApvO6cl1","question":"What is the target audience for this content?","answer":"Children","type":"select"}],"status":"submitted","submittedAt":"2025-09-01T04:19:08.283Z"}}
+::1 - - [01/Sep/2025:04:19:12 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 632 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:19:13 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 632 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:19:27.734Z] POST /api/ai/transparency-score body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Books","category":"Books & Media","description":"this is a book","price":100,"questions":[{"questionId":"dCOOnP5jYBXoVqdYM52B","question":"What type of publication is this?","answer":"Physical Book","type":"select"},{"questionId":"wUOOtgvyndk2ApvO6cl1","question":"What is the target audience for this content?","answer":"Children","type":"select"}],"status":"submitted","submittedAt":"2025-09-01T04:19:08.283Z"},"answers":[{"question":"What is the main benefit of Books?","answer":"reading makes u good"},{"question":"Is this product environmentally friendly?","answer":"true"},{"question":"What is the expected lifespan of this product?","answer":"Permanent/Digital"}]}
+::1 - - [01/Sep/2025:04:19:28 +0000] "POST /api/ai/transparency-score HTTP/1.1" 500 131 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:20:05.948Z] POST /api/auth/login body={"email":"test@altibbe.com","password":"test12345"}
+::1 - - [01/Sep/2025:04:20:07 +0000] "POST /api/auth/login HTTP/1.1" 200 430 "-" "axios/1.11.0"
+[2025-09-01T04:20:07.749Z] POST /api/ai/transparency-score body={"productData":{"productName":"iPhone 15 Pro","category":"Electronics & Gadgets"},"answers":[{"question":"What is the screen size?","answer":"6.1 inches","type":"text"}]}
+::1 - - [01/Sep/2025:04:20:08 +0000] "POST /api/ai/transparency-score HTTP/1.1" 500 131 "-" "axios/1.11.0"
+[2025-09-01T04:20:32.870Z] POST /api/auth/login body={"email":"test@altibbe.com","password":"test12345"}
+::1 - - [01/Sep/2025:04:20:34 +0000] "POST /api/auth/login HTTP/1.1" 200 430 "-" "axios/1.11.0"
+[2025-09-01T04:20:34.618Z] POST /api/ai/transparency-score body={"productData":{"productName":"iPhone 15 Pro","category":"Electronics & Gadgets"},"answers":[{"question":"What is the screen size?","answer":"6.1 inches","type":"text"}]}
+::1 - - [01/Sep/2025:04:20:35 +0000] "POST /api/ai/transparency-score HTTP/1.1" 500 131 "-" "axios/1.11.0"
+[2025-09-01T04:20:47.516Z] POST /api/auth/login body={"email":"test@altibbe.com","password":"test12345"}
+::1 - - [01/Sep/2025:04:20:49 +0000] "POST /api/auth/login HTTP/1.1" 200 430 "-" "axios/1.11.0"
+[2025-09-01T04:20:49.240Z] POST /api/ai/transparency-score body={"productData":{"productName":"iPhone 15 Pro","category":"Electronics & Gadgets"},"answers":[{"question":"What is the screen size?","answer":"6.1 inches","type":"text"}]}
+::1 - - [01/Sep/2025:04:20:49 +0000] "POST /api/ai/transparency-score HTTP/1.1" 500 131 "-" "axios/1.11.0"
+[2025-09-01T04:21:07.686Z] GET /api/health body={}
+::1 - - [01/Sep/2025:04:21:07 +0000] "GET /api/health HTTP/1.1" 200 82 "-" "axios/1.11.0"
+[2025-09-01T04:21:07.693Z] GET /api/ai/health body={}
+::1 - - [01/Sep/2025:04:21:07 +0000] "GET /api/ai/health HTTP/1.1" 503 126 "-" "axios/1.11.0"
+[2025-09-01T04:21:25.961Z] GET /api/health body={}
+::1 - - [01/Sep/2025:04:21:25 +0000] "GET /api/health HTTP/1.1" 200 82 "-" "axios/1.11.0"
+[2025-09-01T04:21:25.970Z] GET /api/ai/health body={}
+::1 - - [01/Sep/2025:04:21:25 +0000] "GET /api/ai/health HTTP/1.1" 503 126 "-" "axios/1.11.0"
+[2025-09-01T04:21:41.752Z] SERVER START port=5000
+[2025-09-01T04:21:53.253Z] GET /api/health body={}
+::1 - - [01/Sep/2025:04:21:53 +0000] "GET /api/health HTTP/1.1" 200 82 "-" "axios/1.11.0"
+[2025-09-01T04:21:53.273Z] GET /api/ai/health body={}
+[2025-09-01T04:21:53.637Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:21:55 +0000] "GET /api/ai/health HTTP/1.1" 503 156 "-" "axios/1.11.0"
+::1 - - [01/Sep/2025:04:21:56 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:21:56.130Z] GET /api/auth/verify body={}
+[2025-09-01T04:21:56.175Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Books","category":"Books & Media","description":"this is a book","price":100,"questions":[{"questionId":"dCOOnP5jYBXoVqdYM52B","question":"What type of publication is this?","answer":"Physical Book","type":"select"},{"questionId":"wUOOtgvyndk2ApvO6cl1","question":"What is the target audience for this content?","answer":"Children","type":"select"}],"status":"submitted","submittedAt":"2025-09-01T04:19:08.283Z"}}
+[2025-09-01T04:21:56.181Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Books","category":"Books & Media","description":"this is a book","price":100,"questions":[{"questionId":"dCOOnP5jYBXoVqdYM52B","question":"What type of publication is this?","answer":"Physical Book","type":"select"},{"questionId":"wUOOtgvyndk2ApvO6cl1","question":"What is the target audience for this content?","answer":"Children","type":"select"}],"status":"submitted","submittedAt":"2025-09-01T04:19:08.283Z"}}
+::1 - - [01/Sep/2025:04:21:56 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:21:58 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 632 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:21:59 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 632 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:22:23.191Z] GET /api/health body={}
+::1 - - [01/Sep/2025:04:22:23 +0000] "GET /api/health HTTP/1.1" 200 82 "-" "axios/1.11.0"
+[2025-09-01T04:22:23.199Z] GET /api/ai/health body={}
+::1 - - [01/Sep/2025:04:22:25 +0000] "GET /api/ai/health HTTP/1.1" 503 156 "-" "axios/1.11.0"
+[2025-09-01T04:22:38.323Z] GET /api/health body={}
+::1 - - [01/Sep/2025:04:22:38 +0000] "GET /api/health HTTP/1.1" 200 82 "-" "axios/1.11.0"
+[2025-09-01T04:22:38.331Z] GET /api/ai/health body={}
+::1 - - [01/Sep/2025:04:22:40 +0000] "GET /api/ai/health HTTP/1.1" 503 156 "-" "axios/1.11.0"
+[2025-09-01T04:23:03.615Z] POST /api/auth/login body={"email":"test@altibbe.com","password":"test12345"}
+::1 - - [01/Sep/2025:04:23:05 +0000] "POST /api/auth/login HTTP/1.1" 200 430 "-" "axios/1.11.0"
+[2025-09-01T04:23:05.394Z] POST /api/ai/transparency-score body={"productData":{"productName":"iPhone 15 Pro","category":"Electronics & Gadgets"},"answers":[{"question":"What is the screen size?","answer":"6.1 inches","type":"text"}]}
+::1 - - [01/Sep/2025:04:23:07 +0000] "POST /api/ai/transparency-score HTTP/1.1" 200 498 "-" "axios/1.11.0"
+[2025-09-01T04:23:41.701Z] POST /api/ai/transparency-score body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Books","category":"Books & Media","description":"this is a book","price":100,"questions":[{"questionId":"dCOOnP5jYBXoVqdYM52B","question":"What type of publication is this?","answer":"Physical Book","type":"select"},{"questionId":"wUOOtgvyndk2ApvO6cl1","question":"What is the target audience for this content?","answer":"Children","type":"select"}],"status":"submitted","submittedAt":"2025-09-01T04:19:08.283Z"},"answers":[{"question":"What is the main benefit of Books?","answer":"tok good"},{"question":"Is this product environmentally friendly?","answer":"true"},{"question":"What is the expected lifespan of this product?","answer":"Permanent/Digital"}]}
+::1 - - [01/Sep/2025:04:23:43 +0000] "POST /api/ai/transparency-score HTTP/1.1" 200 498 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:24:06.648Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:24:07 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:24:07.347Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:24:08 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:24:08.528Z] GET /api/products?limit=10 body={}
+::1 - - [01/Sep/2025:04:24:10 +0000] "GET /api/products?limit=10 HTTP/1.1" 200 4509 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:24:11.121Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:24:12 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:24:12.075Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:24:13 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:24:23.360Z] GET /api/questions/category/Electronics body={}
+::1 - - [01/Sep/2025:04:24:23 +0000] "GET /api/questions/category/Electronics HTTP/1.1" 200 1435 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:24:48.986Z] POST /api/products body={"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"charger","category":"Electronics","description":"thus us a charger","price":299.98,"questions":[{"questionId":"r0LkJU6HX2KT4vss7pM5","question":"What type of electronic device is this?","answer":"Gaming Console","type":"select"},{"questionId":"J8up6SeVDldji1rQOMxt","question":"What is the battery life of this device?","answer":"85","type":"number"},{"questionId":"LrT7Xbt5wEyqJbt4RZBY","question":"Does this device support wireless charging?","answer":true,"type":"boolean"}],"status":"submitted","submittedAt":"2025-09-01T04:24:48.979Z"}
+::1 - - [01/Sep/2025:04:24:50 +0000] "POST /api/products HTTP/1.1" 201 77 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:24:50.741Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"charger","category":"Electronics","description":"thus us a charger","price":299.98,"questions":[{"questionId":"r0LkJU6HX2KT4vss7pM5","question":"What type of electronic device is this?","answer":"Gaming Console","type":"select"},{"questionId":"J8up6SeVDldji1rQOMxt","question":"What is the battery life of this device?","answer":"85","type":"number"},{"questionId":"LrT7Xbt5wEyqJbt4RZBY","question":"Does this device support wireless charging?","answer":true,"type":"boolean"}],"status":"submitted","submittedAt":"2025-09-01T04:24:48.979Z"}}
+[2025-09-01T04:24:50.745Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"charger","category":"Electronics","description":"thus us a charger","price":299.98,"questions":[{"questionId":"r0LkJU6HX2KT4vss7pM5","question":"What type of electronic device is this?","answer":"Gaming Console","type":"select"},{"questionId":"J8up6SeVDldji1rQOMxt","question":"What is the battery life of this device?","answer":"85","type":"number"},{"questionId":"LrT7Xbt5wEyqJbt4RZBY","question":"Does this device support wireless charging?","answer":true,"type":"boolean"}],"status":"submitted","submittedAt":"2025-09-01T04:24:48.979Z"}}
+::1 - - [01/Sep/2025:04:24:52 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 628 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:24:53 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 628 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:25:05.428Z] POST /api/ai/transparency-score body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"charger","category":"Electronics","description":"thus us a charger","price":299.98,"questions":[{"questionId":"r0LkJU6HX2KT4vss7pM5","question":"What type of electronic device is this?","answer":"Gaming Console","type":"select"},{"questionId":"J8up6SeVDldji1rQOMxt","question":"What is the battery life of this device?","answer":"85","type":"number"},{"questionId":"LrT7Xbt5wEyqJbt4RZBY","question":"Does this device support wireless charging?","answer":true,"type":"boolean"}],"status":"submitted","submittedAt":"2025-09-01T04:24:48.979Z"},"answers":[{"question":"What is the main benefit of charger?","answer":"this is good"},{"question":"Is this product environmentally friendly?","answer":"true"},{"question":"What is the expected lifespan of this product?","answer":"5+ years"}]}
+::1 - - [01/Sep/2025:04:25:07 +0000] "POST /api/ai/transparency-score HTTP/1.1" 200 498 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:26:20.161Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:26:21 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:26:21.612Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:26:22 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:26:25.144Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:26:25 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:26:25.542Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:26:26 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:26:38.145Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:26:38 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:26:38.580Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:26:39 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:26:44.148Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:26:44 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:26:44.558Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:26:45 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:26:48.147Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:26:48 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:26:48.577Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:26:50 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:26:52.150Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:26:52 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:26:52.577Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:26:53 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:26:58.144Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:26:58 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:26:58.610Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:26:59 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:35:15.756Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"charger","category":"Electronics","description":"thus us a charger","price":299.98,"questions":[{"questionId":"r0LkJU6HX2KT4vss7pM5","question":"What type of electronic device is this?","answer":"Gaming Console","type":"select"},{"questionId":"J8up6SeVDldji1rQOMxt","question":"What is the battery life of this device?","answer":"85","type":"number"},{"questionId":"LrT7Xbt5wEyqJbt4RZBY","question":"Does this device support wireless charging?","answer":true,"type":"boolean"}],"status":"submitted","submittedAt":"2025-09-01T04:24:48.979Z"}}
+[2025-09-01T04:35:15.757Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"charger","category":"Electronics","description":"thus us a charger","price":299.98,"questions":[{"questionId":"r0LkJU6HX2KT4vss7pM5","question":"What type of electronic device is this?","answer":"Gaming Console","type":"select"},{"questionId":"J8up6SeVDldji1rQOMxt","question":"What is the battery life of this device?","answer":"85","type":"number"},{"questionId":"LrT7Xbt5wEyqJbt4RZBY","question":"Does this device support wireless charging?","answer":true,"type":"boolean"}],"status":"submitted","submittedAt":"2025-09-01T04:24:48.979Z"}}
+[2025-09-01T04:35:16.759Z] GET /api/questions/categories body={}
+[2025-09-01T04:35:17.135Z] GET /api/products?limit=10 body={}
+::1 - - [01/Sep/2025:04:35:18 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:35:18.475Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:35:19 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:35:20 +0000] "GET /api/products?limit=10 HTTP/1.1" 200 4509 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:35:20 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 628 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:35:20 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 628 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:35:26.343Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:35:27 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:35:27.373Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:35:28 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:35:37.729Z] GET /api/questions/category/E-commerce body={}
+::1 - - [01/Sep/2025:04:35:38 +0000] "GET /api/questions/category/E-commerce HTTP/1.1" 200 4450 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:35:41.042Z] GET /api/questions/category/Electronics body={}
+::1 - - [01/Sep/2025:04:35:41 +0000] "GET /api/questions/category/Electronics HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:36:06.413Z] POST /api/products body={"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"usb hub","category":"Electronics","description":"this is a hub","price":100,"questions":[{"questionId":"r0LkJU6HX2KT4vss7pM5","question":"What type of electronic device is this?","answer":"Smart Home Device","type":"select"},{"questionId":"J8up6SeVDldji1rQOMxt","question":"What is the battery life of this device?","answer":"0","type":"number"},{"questionId":"LrT7Xbt5wEyqJbt4RZBY","question":"Does this device support wireless charging?","type":"boolean"}],"status":"submitted","submittedAt":"2025-09-01T04:36:06.408Z"}
+::1 - - [01/Sep/2025:04:36:08 +0000] "POST /api/products HTTP/1.1" 201 77 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:36:08.206Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"usb hub","category":"Electronics","description":"this is a hub","price":100,"questions":[{"questionId":"r0LkJU6HX2KT4vss7pM5","question":"What type of electronic device is this?","answer":"Smart Home Device","type":"select"},{"questionId":"J8up6SeVDldji1rQOMxt","question":"What is the battery life of this device?","answer":"0","type":"number"},{"questionId":"LrT7Xbt5wEyqJbt4RZBY","question":"Does this device support wireless charging?","type":"boolean"}],"status":"submitted","submittedAt":"2025-09-01T04:36:06.408Z"}}
+[2025-09-01T04:36:08.210Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"usb hub","category":"Electronics","description":"this is a hub","price":100,"questions":[{"questionId":"r0LkJU6HX2KT4vss7pM5","question":"What type of electronic device is this?","answer":"Smart Home Device","type":"select"},{"questionId":"J8up6SeVDldji1rQOMxt","question":"What is the battery life of this device?","answer":"0","type":"number"},{"questionId":"LrT7Xbt5wEyqJbt4RZBY","question":"Does this device support wireless charging?","type":"boolean"}],"status":"submitted","submittedAt":"2025-09-01T04:36:06.408Z"}}
+::1 - - [01/Sep/2025:04:36:10 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 628 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:36:12 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 628 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:36:22.107Z] POST /api/ai/transparency-score body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"usb hub","category":"Electronics","description":"this is a hub","price":100,"questions":[{"questionId":"r0LkJU6HX2KT4vss7pM5","question":"What type of electronic device is this?","answer":"Smart Home Device","type":"select"},{"questionId":"J8up6SeVDldji1rQOMxt","question":"What is the battery life of this device?","answer":"0","type":"number"},{"questionId":"LrT7Xbt5wEyqJbt4RZBY","question":"Does this device support wireless charging?","type":"boolean"}],"status":"submitted","submittedAt":"2025-09-01T04:36:06.408Z"},"answers":[{"question":"What is the main benefit of usb hub?","answer":"this is good"},{"question":"Is this product environmentally friendly?","answer":"true"},{"question":"What is the expected lifespan of this product?","answer":"5+ years"}]}
+::1 - - [01/Sep/2025:04:36:24 +0000] "POST /api/ai/transparency-score HTTP/1.1" 200 498 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:36:35.969Z] GET /api/products?limit=50 body={}
+::1 - - [01/Sep/2025:04:36:37 +0000] "GET /api/products?limit=50 HTTP/1.1" 200 10655 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:36:43.062Z] GET /api/products?limit=50 body={}
+[2025-09-01T04:36:43.063Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:04:36:44 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:36:45 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:37:33.975Z] GET /api/health body={}
+::1 - - [01/Sep/2025:04:37:33 +0000] "GET /api/health HTTP/1.1" 200 82 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T04:37:38.353Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:04:37:39 +0000] "GET /api/reports HTTP/1.1" 200 17340 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T04:37:43.726Z] GET /api/reports/qEbVx04XGiTV8N3s7FgK/download body={}
+::1 - - [01/Sep/2025:04:37:44 +0000] "GET /api/reports/qEbVx04XGiTV8N3s7FgK/download HTTP/1.1" 200 316 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T04:38:16.777Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:38:17 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:38:17.192Z] GET /api/auth/verify body={}
+[2025-09-01T04:38:17.216Z] GET /api/products?limit=50 body={}
+[2025-09-01T04:38:17.220Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:04:38:18 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:38:19 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:38:19 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:38:19.498Z] POST /api/reports/generate body={"productIds":["0PLHZSly627MgTsMgbIJ","0jwTehT4v3k56NwI8PEf","0lfYl5gHSIBGIqVr73iE","15mNbUkp9EdK3TYORfKj","1tfwRDwkZ5OhWF4pvhgY","3Its9TXuh8clXAViKn8m","4Vwyuf6bRTstPuWCR7WX","4vAWl3w7Y7H7TZT3aW5r","77UtKzxaSvAe6ITYDNfd","7HHXyzfvB5E2W8vwdPCU","7ZJKtURuFvmBRWBh8AVn","8HfX7eXlaGrJofjawLkI","CN2oXSN2qXHjizeOX941","CpLHx9wm9dw5ccaWFv9w","FCRWpv60RqpwDygBWnWT","Nv8cGYC6hi9LY0ukd2QH","S6rsB1EWiRZIXoBTwUGA","ZGn5H3GVxyEO1Mmwn32g","fuyWXwM8430BUIwmmwX9","mKFUDFNRtVaLSIgjpmaH","r7PYGudJdM7Y0r8CIk0U","tBu1Ypr9Bnrn3FjDPar4","vIxEXyYjNWJIOW5qT9BH","y9Rf9CFM4OlwmWtyxqQ6"],"reportType":"all-products","title":"Complete Product Transparency Report"}
+[2025-09-01T04:38:30.850Z] GET /api/reports/qEbVx04XGiTV8N3s7FgK/download body={}
+::1 - - [01/Sep/2025:04:38:31 +0000] "GET /api/reports/qEbVx04XGiTV8N3s7FgK/download HTTP/1.1" 200 316 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:38:42 +0000] "POST /api/reports/generate HTTP/1.1" 201 2904 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:38:42.932Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:04:38:44 +0000] "GET /api/reports HTTP/1.1" 200 20180 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:39:16.119Z] GET /api/products?limit=50 body={}
+[2025-09-01T04:39:16.121Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:04:39:17 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:39:18 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:39:21.692Z] GET /api/reports/qEbVx04XGiTV8N3s7FgK/download body={}
+::1 - - [01/Sep/2025:04:39:22 +0000] "GET /api/reports/qEbVx04XGiTV8N3s7FgK/download HTTP/1.1" 200 316 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T04:39:41.117Z] GET /api/products?limit=50 body={}
+[2025-09-01T04:39:41.118Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:04:39:42 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:39:43 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:39:47.264Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:39:47 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:39:47.675Z] GET /api/auth/verify body={}
+[2025-09-01T04:39:47.697Z] GET /api/products?limit=50 body={}
+[2025-09-01T04:39:47.699Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:04:39:48 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:39:49 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:39:49 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:39:50.207Z] POST /api/reports/generate body={"productIds":["0PLHZSly627MgTsMgbIJ","0jwTehT4v3k56NwI8PEf","0lfYl5gHSIBGIqVr73iE","15mNbUkp9EdK3TYORfKj","1tfwRDwkZ5OhWF4pvhgY","3Its9TXuh8clXAViKn8m","4Vwyuf6bRTstPuWCR7WX","4vAWl3w7Y7H7TZT3aW5r","77UtKzxaSvAe6ITYDNfd","7HHXyzfvB5E2W8vwdPCU","7ZJKtURuFvmBRWBh8AVn","8HfX7eXlaGrJofjawLkI","CN2oXSN2qXHjizeOX941","CpLHx9wm9dw5ccaWFv9w","FCRWpv60RqpwDygBWnWT","Nv8cGYC6hi9LY0ukd2QH","S6rsB1EWiRZIXoBTwUGA","ZGn5H3GVxyEO1Mmwn32g","fuyWXwM8430BUIwmmwX9","mKFUDFNRtVaLSIgjpmaH","r7PYGudJdM7Y0r8CIk0U","tBu1Ypr9Bnrn3FjDPar4","vIxEXyYjNWJIOW5qT9BH","y9Rf9CFM4OlwmWtyxqQ6"],"reportType":"all-products","title":"Complete Product Transparency Report"}
+[2025-09-01T04:39:54.194Z] GET /api/reports/BIVWZIDyhDqLx1668EQR/download body={}
+::1 - - [01/Sep/2025:04:39:55 +0000] "GET /api/reports/BIVWZIDyhDqLx1668EQR/download HTTP/1.1" 200 316 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:40:13 +0000] "POST /api/reports/generate HTTP/1.1" 201 2904 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:40:13.175Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:04:40:14 +0000] "GET /api/reports HTTP/1.1" 200 23020 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:41:01.188Z] GET /api/reports/qEbVx04XGiTV8N3s7FgK/download body={}
+::1 - - [01/Sep/2025:04:41:01 +0000] "GET /api/reports/qEbVx04XGiTV8N3s7FgK/download HTTP/1.1" 200 316 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T04:42:10.824Z] POST /api/auth/login body={"email":"test@example.com","password":"password123"}
+::1 - - [01/Sep/2025:04:42:11 +0000] "POST /api/auth/login HTTP/1.1" 401 31 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T04:42:47.065Z] GET /api/reports/qEbVx04XGiTV8N3s7FgK/download body={}
+::1 - - [01/Sep/2025:04:42:47 +0000] "GET /api/reports/qEbVx04XGiTV8N3s7FgK/download HTTP/1.1" 200 316 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T04:44:50.690Z] GET /api/reports/qEbVx04XGiTV8N3s7FgK/download body={}
+::1 - - [01/Sep/2025:04:44:51 +0000] "GET /api/reports/qEbVx04XGiTV8N3s7FgK/download HTTP/1.1" 200 316 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T04:47:35.744Z] SERVER START port=5000
+[2025-09-01T04:47:40.646Z] GET /api/reports/test/debug body={}
+::1 - - [01/Sep/2025:04:47:40 +0000] "GET /api/reports/test/debug HTTP/1.1" 200 105 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T04:47:46.491Z] GET /api/reports/qEbVx04XGiTV8N3s7FgK/download body={}
+::1 - - [01/Sep/2025:04:48:05 +0000] "GET /api/reports/qEbVx04XGiTV8N3s7FgK/download HTTP/1.1" 200 3683 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T04:52:24.540Z] GET /api/health body={}
+::1 - - [01/Sep/2025:04:52:24 +0000] "GET /api/health HTTP/1.1" 200 82 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T04:56:57.329Z] SERVER START port=5000
+[2025-09-01T04:57:22.790Z] GET /api/health body={}
+::1 - - [01/Sep/2025:04:57:22 +0000] "GET /api/health HTTP/1.1" 200 82 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.4768"
+[2025-09-01T04:57:59.349Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:57:59 +0000] "GET /api/auth/verify HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:57:59.850Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:58:01 +0000] "GET /api/auth/verify HTTP/1.1" 200 175 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:58:01.812Z] GET /api/auth/verify body={}
+[2025-09-01T04:58:01.836Z] GET /api/products?limit=50 body={}
+[2025-09-01T04:58:01.839Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:04:58:02 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:58:03 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:58:04 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:58:09.665Z] GET /api/products?limit=10 body={}
+[2025-09-01T04:58:10.768Z] GET /api/products?limit=50 body={}
+[2025-09-01T04:58:10.769Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:04:58:11 +0000] "GET /api/products?limit=10 HTTP/1.1" 200 4847 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:58:12 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:58:12.581Z] GET /api/products?limit=50 body={}
+::1 - - [01/Sep/2025:04:58:12 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:04:58:14 +0000] "GET /api/products?limit=50 HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:58:14.353Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:58:15 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:58:15.242Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:04:58:16 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:58:18.265Z] GET /api/products?limit=10 body={}
+::1 - - [01/Sep/2025:04:58:20 +0000] "GET /api/products?limit=10 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:58:38.863Z] POST /api/auth/login body={"email":"eesamansoorpatan@gmail.com","password":"mansoor123"}
+::1 - - [01/Sep/2025:04:58:40 +0000] "POST /api/auth/login HTTP/1.1" 200 483 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:58:40.636Z] GET /api/products?limit=10 body={}
+::1 - - [01/Sep/2025:04:58:42 +0000] "GET /api/products?limit=10 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:58:46.522Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:58:47 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:58:47.496Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:04:58:48 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T04:59:05.171Z] GET /api/questions/category/Retail body={}
+::1 - - [01/Sep/2025:04:59:05 +0000] "GET /api/questions/category/Retail HTTP/1.1" 200 4450 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:00:05.541Z] POST /api/products body={"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Macth box","category":"Retail","description":"this is fire match box","price":1,"questions":[{"questionId":"CUbBPzMkTrL41geuqHHM","question":"What type of retail channel is this for?","answer":"Physical Store","type":"select"},{"questionId":"KJAjcsvdfpqU5K4bBS0K","question":"What type of retail channel is this for?","answer":"Physical Store","type":"select"},{"questionId":"OiAimzMx6WDUhPZz6ZQN","question":"What type of retail channel is this for?","answer":"Physical Store","type":"select"},{"questionId":"aAlfU9CsoVlw519eCs24","question":"What is the target demographic?","answer":"All Ages","type":"select"},{"questionId":"hb87Y1JnQEjCgH78CsQ5","question":"What is the target demographic?","answer":"All Ages","type":"select"},{"questionId":"pThjniPNmacqadC5gSlX","question":"What is the target demographic?","answer":"Seniors (55+)","type":"select"},{"questionId":"6GCyYdrRynCxP3ZPELqm","question":"What is the expected shelf life?","answer":"-8","type":"number"},{"questionId":"n91ne9uWAWIKdCCdFEQj","question":"What is the expected shelf life?","answer":"1","type":"number"},{"questionId":"zh1zuBcAbtjauDTwd6Kf","question":"What is the expected shelf life?","answer":"1","type":"number"}],"status":"submitted","submittedAt":"2025-09-01T05:00:05.535Z"}
+::1 - - [01/Sep/2025:05:00:07 +0000] "POST /api/products HTTP/1.1" 201 77 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:00:07.337Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Macth box","category":"Retail","description":"this is fire match box","price":1,"questions":[{"questionId":"CUbBPzMkTrL41geuqHHM","question":"What type of retail channel is this for?","answer":"Physical Store","type":"select"},{"questionId":"KJAjcsvdfpqU5K4bBS0K","question":"What type of retail channel is this for?","answer":"Physical Store","type":"select"},{"questionId":"OiAimzMx6WDUhPZz6ZQN","question":"What type of retail channel is this for?","answer":"Physical Store","type":"select"},{"questionId":"aAlfU9CsoVlw519eCs24","question":"What is the target demographic?","answer":"All Ages","type":"select"},{"questionId":"hb87Y1JnQEjCgH78CsQ5","question":"What is the target demographic?","answer":"All Ages","type":"select"},{"questionId":"pThjniPNmacqadC5gSlX","question":"What is the target demographic?","answer":"Seniors (55+)","type":"select"},{"questionId":"6GCyYdrRynCxP3ZPELqm","question":"What is the expected shelf life?","answer":"-8","type":"number"},{"questionId":"n91ne9uWAWIKdCCdFEQj","question":"What is the expected shelf life?","answer":"1","type":"number"},{"questionId":"zh1zuBcAbtjauDTwd6Kf","question":"What is the expected shelf life?","answer":"1","type":"number"}],"status":"submitted","submittedAt":"2025-09-01T05:00:05.535Z"}}
+[2025-09-01T05:00:07.340Z] POST /api/ai/generate-questions body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Macth box","category":"Retail","description":"this is fire match box","price":1,"questions":[{"questionId":"CUbBPzMkTrL41geuqHHM","question":"What type of retail channel is this for?","answer":"Physical Store","type":"select"},{"questionId":"KJAjcsvdfpqU5K4bBS0K","question":"What type of retail channel is this for?","answer":"Physical Store","type":"select"},{"questionId":"OiAimzMx6WDUhPZz6ZQN","question":"What type of retail channel is this for?","answer":"Physical Store","type":"select"},{"questionId":"aAlfU9CsoVlw519eCs24","question":"What is the target demographic?","answer":"All Ages","type":"select"},{"questionId":"hb87Y1JnQEjCgH78CsQ5","question":"What is the target demographic?","answer":"All Ages","type":"select"},{"questionId":"pThjniPNmacqadC5gSlX","question":"What is the target demographic?","answer":"Seniors (55+)","type":"select"},{"questionId":"6GCyYdrRynCxP3ZPELqm","question":"What is the expected shelf life?","answer":"-8","type":"number"},{"questionId":"n91ne9uWAWIKdCCdFEQj","question":"What is the expected shelf life?","answer":"1","type":"number"},{"questionId":"zh1zuBcAbtjauDTwd6Kf","question":"What is the expected shelf life?","answer":"1","type":"number"}],"status":"submitted","submittedAt":"2025-09-01T05:00:05.535Z"}}
+::1 - - [01/Sep/2025:05:00:09 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 615 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:00:10 +0000] "POST /api/ai/generate-questions HTTP/1.1" 200 615 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:00:19.463Z] POST /api/ai/transparency-score body={"productData":{"userId":"z5uTDnWfP5VrmKpS6s2x","productName":"Macth box","category":"Retail","description":"this is fire match box","price":1,"questions":[{"questionId":"CUbBPzMkTrL41geuqHHM","question":"What type of retail channel is this for?","answer":"Physical Store","type":"select"},{"questionId":"KJAjcsvdfpqU5K4bBS0K","question":"What type of retail channel is this for?","answer":"Physical Store","type":"select"},{"questionId":"OiAimzMx6WDUhPZz6ZQN","question":"What type of retail channel is this for?","answer":"Physical Store","type":"select"},{"questionId":"aAlfU9CsoVlw519eCs24","question":"What is the target demographic?","answer":"All Ages","type":"select"},{"questionId":"hb87Y1JnQEjCgH78CsQ5","question":"What is the target demographic?","answer":"All Ages","type":"select"},{"questionId":"pThjniPNmacqadC5gSlX","question":"What is the target demographic?","answer":"Seniors (55+)","type":"select"},{"questionId":"6GCyYdrRynCxP3ZPELqm","question":"What is the expected shelf life?","answer":"-8","type":"number"},{"questionId":"n91ne9uWAWIKdCCdFEQj","question":"What is the expected shelf life?","answer":"1","type":"number"},{"questionId":"zh1zuBcAbtjauDTwd6Kf","question":"What is the expected shelf life?","answer":"1","type":"number"}],"status":"submitted","submittedAt":"2025-09-01T05:00:05.535Z"},"answers":[{"question":"What is the main benefit of Macth box?","answer":"anything"},{"question":"Is this product environmentally friendly?","answer":"true"},{"question":"What is the expected lifespan of this product?","answer":"Less than 1 year"}]}
+::1 - - [01/Sep/2025:05:00:21 +0000] "POST /api/ai/transparency-score HTTP/1.1" 200 498 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:00:56.878Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:05:00:57 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:00:57.859Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:05:00:59 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:00:59.882Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:00:59.883Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:01:01 +0000] "GET /api/products?limit=50 HTTP/1.1" 200 12134 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:01:01 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:01:02.877Z] POST /api/reports/generate body={"productIds":["0PLHZSly627MgTsMgbIJ","0jwTehT4v3k56NwI8PEf","0lfYl5gHSIBGIqVr73iE","15mNbUkp9EdK3TYORfKj","1tfwRDwkZ5OhWF4pvhgY","3Its9TXuh8clXAViKn8m","4Vwyuf6bRTstPuWCR7WX","4vAWl3w7Y7H7TZT3aW5r","77UtKzxaSvAe6ITYDNfd","7HHXyzfvB5E2W8vwdPCU","7ZJKtURuFvmBRWBh8AVn","8HfX7eXlaGrJofjawLkI","CN2oXSN2qXHjizeOX941","CpLHx9wm9dw5ccaWFv9w","FCRWpv60RqpwDygBWnWT","Nv8cGYC6hi9LY0ukd2QH","S6rsB1EWiRZIXoBTwUGA","ZGn5H3GVxyEO1Mmwn32g","fuyWXwM8430BUIwmmwX9","mKFUDFNRtVaLSIgjpmaH","r7PYGudJdM7Y0r8CIk0U","tBu1Ypr9Bnrn3FjDPar4","twVw0ATcDtMA94MjrlWi","vIxEXyYjNWJIOW5qT9BH","y9Rf9CFM4OlwmWtyxqQ6"],"reportType":"quarterly","title":"Quarterly Transparency Report"}
+::1 - - [01/Sep/2025:05:01:26 +0000] "POST /api/reports/generate HTTP/1.1" 201 2991 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:01:26.042Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:01:27 +0000] "GET /api/reports HTTP/1.1" 200 25947 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:01:31.935Z] GET /api/reports/6sVLNG0P6XoIsBe6AcEY/download body={}
+[2025-09-01T05:01:58.158Z] GET /api/reports body={}
+[2025-09-01T05:01:58.161Z] GET /api/products?limit=50 body={}
+::1 - - [01/Sep/2025:05:02:01 +0000] "GET /api/reports/6sVLNG0P6XoIsBe6AcEY/download HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:02:03 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:02:04 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:02:09.153Z] GET /api/reports/6sVLNG0P6XoIsBe6AcEY/download body={}
+::1 - - [01/Sep/2025:05:02:32 +0000] "GET /api/reports/6sVLNG0P6XoIsBe6AcEY/download HTTP/1.1" 200 3830 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:02:32.552Z] GET /api/reports/6sVLNG0P6XoIsBe6AcEY/download body={}
+[2025-09-01T05:02:40.733Z] GET /api/reports/6sVLNG0P6XoIsBe6AcEY/download body={}
+::1 - - [01/Sep/2025:05:02:50 +0000] "GET /api/reports/6sVLNG0P6XoIsBe6AcEY/download HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:02:50 +0000] "GET /api/reports/6sVLNG0P6XoIsBe6AcEY/download HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:07:21.812Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:05:07:24 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:07:24.698Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:05:07:25 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:07:36.680Z] GET /api/questions/category/Electronics body={}
+::1 - - [01/Sep/2025:05:07:37 +0000] "GET /api/questions/category/Electronics HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:07:59.746Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:07:59.748Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:08:00 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:08:02 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:08:03.595Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:05:08:05 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:08:05.938Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:05:08:07 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:08:19.182Z] GET /api/questions/category/Retail body={}
+::1 - - [01/Sep/2025:05:08:19 +0000] "GET /api/questions/category/Retail HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:12:07.616Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:12:08 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:12:08.214Z] GET /api/auth/verify body={}
+[2025-09-01T05:12:08.240Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:05:12:09 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:12:11 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:12:11.519Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:05:12:12 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:12:24.643Z] GET /api/questions/category/Retail body={}
+::1 - - [01/Sep/2025:05:12:25 +0000] "GET /api/questions/category/Retail HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:15:54.572Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:15:54.573Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:15:56 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:15:56 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:15:57.672Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:05:15:58 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:15:58.669Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:05:15:59 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:16:06.108Z] GET /api/questions/category/Retail body={}
+::1 - - [01/Sep/2025:05:16:06 +0000] "GET /api/questions/category/Retail HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:21:53.182Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:21:53.183Z] GET /api/reports body={}
+[2025-09-01T05:21:55.273Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:05:22:02 +0000] "GET /api/questions/categories HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:22:02 +0000] "GET /api/products?limit=50 HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:22:02 +0000] "GET /api/reports HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:22:02.711Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:22:15 +0000] "GET /api/auth/verify HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:22:15.500Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:22:16 +0000] "GET /api/auth/verify HTTP/1.1" 200 175 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:22:16.961Z] GET /api/auth/verify body={}
+[2025-09-01T05:22:17.302Z] GET /api/products?limit=10 body={}
+::1 - - [01/Sep/2025:05:22:18 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:22:18 +0000] "GET /api/products?limit=10 HTTP/1.1" 200 4847 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:22:19.314Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:05:22:20 +0000] "GET /api/questions/categories HTTP/1.1" 200 420 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:22:20.479Z] GET /api/questions/categories body={}
+::1 - - [01/Sep/2025:05:22:21 +0000] "GET /api/questions/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:22:29.686Z] GET /api/questions/category/Retail body={}
+::1 - - [01/Sep/2025:05:22:30 +0000] "GET /api/questions/category/Retail HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:22:42.706Z] GET /api/products?limit=10 body={}
+::1 - - [01/Sep/2025:05:22:44 +0000] "GET /api/products?limit=10 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:22:57.259Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:22:57.260Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:22:58 +0000] "GET /api/products?limit=50 HTTP/1.1" 200 12134 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:22:59 +0000] "GET /api/reports HTTP/1.1" 200 25947 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:23:37.142Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:23:37.143Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:23:38 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:23:38 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:23:41.115Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:23:41.116Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:23:42 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:23:42 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:23:47.115Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:23:47.116Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:23:48 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:23:48 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:23:50.118Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:23:50.119Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:23:51 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:23:51 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:23:54.124Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:23:54.125Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:23:55 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:23:55 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:24:10.363Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:24:10 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:24:10.732Z] GET /api/auth/verify body={}
+[2025-09-01T05:24:10.754Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:24:10.756Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:24:11 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:24:12 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:24:12 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:24:20.427Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:24:20 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:24:20.777Z] GET /api/auth/verify body={}
+[2025-09-01T05:24:20.796Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:24:20.797Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:24:21 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:24:22 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:24:22 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:25:23.151Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:25:23.152Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:25:24 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:25:24 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:25:26.780Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:25:26.781Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:25:28 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:25:28 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:25:31.124Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:25:31.126Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:25:32 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:25:32 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:25:37.113Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:25:37.114Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:25:38 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:25:38 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:25:51.121Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:25:51.122Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:25:52 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:25:52 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:25:54.132Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:25:54 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:25:54.481Z] GET /api/auth/verify body={}
+[2025-09-01T05:25:54.506Z] GET /api/reports body={}
+[2025-09-01T05:25:54.507Z] GET /api/products?limit=50 body={}
+::1 - - [01/Sep/2025:05:25:55 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:25:56 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:25:56 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:26:22.122Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:26:22.124Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:26:23 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:26:23 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:26:30.119Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:26:30.120Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:26:31 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:26:31 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:26:34.439Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:26:34 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:26:34.773Z] GET /api/auth/verify body={}
+[2025-09-01T05:26:34.793Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:26:34.794Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:26:35 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:26:36 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:26:36 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:26:39.437Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:26:39 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:26:39.876Z] GET /api/auth/verify body={}
+[2025-09-01T05:26:39.907Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:26:39.908Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:26:40 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:26:41 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:26:41 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:26:46.639Z] POST /api/reports/generate body={"productIds":["0PLHZSly627MgTsMgbIJ","0jwTehT4v3k56NwI8PEf","0lfYl5gHSIBGIqVr73iE","15mNbUkp9EdK3TYORfKj","1tfwRDwkZ5OhWF4pvhgY","3Its9TXuh8clXAViKn8m","4Vwyuf6bRTstPuWCR7WX","4vAWl3w7Y7H7TZT3aW5r","77UtKzxaSvAe6ITYDNfd","7HHXyzfvB5E2W8vwdPCU","7ZJKtURuFvmBRWBh8AVn","8HfX7eXlaGrJofjawLkI","CN2oXSN2qXHjizeOX941","CpLHx9wm9dw5ccaWFv9w","FCRWpv60RqpwDygBWnWT","Nv8cGYC6hi9LY0ukd2QH","S6rsB1EWiRZIXoBTwUGA","ZGn5H3GVxyEO1Mmwn32g","fuyWXwM8430BUIwmmwX9","mKFUDFNRtVaLSIgjpmaH","r7PYGudJdM7Y0r8CIk0U","tBu1Ypr9Bnrn3FjDPar4","twVw0ATcDtMA94MjrlWi","vIxEXyYjNWJIOW5qT9BH","y9Rf9CFM4OlwmWtyxqQ6"],"reportType":"quarterly","title":"Quarterly Transparency Report - Q3-2025","quarter":"Q3-2025"}
+::1 - - [01/Sep/2025:05:26:48 +0000] "POST /api/reports/generate HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:26:48.842Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:26:50 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:26:50.044Z] GET /api/auth/verify body={}
+[2025-09-01T05:26:50.071Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:26:50.073Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:26:51 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:26:51 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:26:52 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:27:01.972Z] GET /api/reports/6sVLNG0P6XoIsBe6AcEY/download body={}
+::1 - - [01/Sep/2025:05:27:12 +0000] "GET /api/reports/6sVLNG0P6XoIsBe6AcEY/download HTTP/1.1" 200 3831 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:28:24.737Z] POST /api/reports/generate body={"productIds":["0PLHZSly627MgTsMgbIJ","0jwTehT4v3k56NwI8PEf","0lfYl5gHSIBGIqVr73iE","15mNbUkp9EdK3TYORfKj","1tfwRDwkZ5OhWF4pvhgY","3Its9TXuh8clXAViKn8m","4Vwyuf6bRTstPuWCR7WX","4vAWl3w7Y7H7TZT3aW5r","77UtKzxaSvAe6ITYDNfd","7HHXyzfvB5E2W8vwdPCU","7ZJKtURuFvmBRWBh8AVn","8HfX7eXlaGrJofjawLkI","CN2oXSN2qXHjizeOX941","CpLHx9wm9dw5ccaWFv9w","FCRWpv60RqpwDygBWnWT","Nv8cGYC6hi9LY0ukd2QH","S6rsB1EWiRZIXoBTwUGA","ZGn5H3GVxyEO1Mmwn32g","fuyWXwM8430BUIwmmwX9","mKFUDFNRtVaLSIgjpmaH","r7PYGudJdM7Y0r8CIk0U","tBu1Ypr9Bnrn3FjDPar4","twVw0ATcDtMA94MjrlWi","vIxEXyYjNWJIOW5qT9BH","y9Rf9CFM4OlwmWtyxqQ6"],"reportType":"category","title":"Category Analysis Report","quarter":"Q3-2025"}
+::1 - - [01/Sep/2025:05:28:34 +0000] "POST /api/reports/generate HTTP/1.1" 201 2985 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:28:34.354Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:28:34 +0000] "GET /api/reports HTTP/1.1" 200 31805 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:28:40.775Z] POST /api/reports/generate body={"productIds":["0PLHZSly627MgTsMgbIJ","0jwTehT4v3k56NwI8PEf","0lfYl5gHSIBGIqVr73iE","15mNbUkp9EdK3TYORfKj","1tfwRDwkZ5OhWF4pvhgY","3Its9TXuh8clXAViKn8m","4Vwyuf6bRTstPuWCR7WX","4vAWl3w7Y7H7TZT3aW5r","77UtKzxaSvAe6ITYDNfd","7HHXyzfvB5E2W8vwdPCU","7ZJKtURuFvmBRWBh8AVn","8HfX7eXlaGrJofjawLkI","CN2oXSN2qXHjizeOX941","CpLHx9wm9dw5ccaWFv9w","FCRWpv60RqpwDygBWnWT","Nv8cGYC6hi9LY0ukd2QH","S6rsB1EWiRZIXoBTwUGA","ZGn5H3GVxyEO1Mmwn32g","fuyWXwM8430BUIwmmwX9","mKFUDFNRtVaLSIgjpmaH","r7PYGudJdM7Y0r8CIk0U","tBu1Ypr9Bnrn3FjDPar4","twVw0ATcDtMA94MjrlWi","vIxEXyYjNWJIOW5qT9BH","y9Rf9CFM4OlwmWtyxqQ6"],"reportType":"all-products","title":"Complete Product Transparency Report"}
+::1 - - [01/Sep/2025:05:28:47 +0000] "POST /api/reports/generate HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:28:47.990Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:28:48 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:28:48.512Z] GET /api/auth/verify body={}
+[2025-09-01T05:28:48.537Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:28:48.539Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:28:48 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:28:49 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:28:49 +0000] "GET /api/reports HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:28:57.508Z] GET /api/auth/verify body={}
+::1 - - [01/Sep/2025:05:28:57 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:28:57.877Z] GET /api/auth/verify body={}
+[2025-09-01T05:28:57.902Z] GET /api/products?limit=50 body={}
+[2025-09-01T05:28:57.904Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:28:58 +0000] "GET /api/auth/verify HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:28:58 +0000] "GET /api/reports HTTP/1.1" 200 34742 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+::1 - - [01/Sep/2025:05:28:58 +0000] "GET /api/products?limit=50 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:29:02.600Z] POST /api/reports/generate body={"productIds":["0PLHZSly627MgTsMgbIJ","0jwTehT4v3k56NwI8PEf","0lfYl5gHSIBGIqVr73iE","15mNbUkp9EdK3TYORfKj","1tfwRDwkZ5OhWF4pvhgY","3Its9TXuh8clXAViKn8m","4Vwyuf6bRTstPuWCR7WX","4vAWl3w7Y7H7TZT3aW5r","77UtKzxaSvAe6ITYDNfd","7HHXyzfvB5E2W8vwdPCU","7ZJKtURuFvmBRWBh8AVn","8HfX7eXlaGrJofjawLkI","CN2oXSN2qXHjizeOX941","CpLHx9wm9dw5ccaWFv9w","FCRWpv60RqpwDygBWnWT","Nv8cGYC6hi9LY0ukd2QH","S6rsB1EWiRZIXoBTwUGA","ZGn5H3GVxyEO1Mmwn32g","fuyWXwM8430BUIwmmwX9","mKFUDFNRtVaLSIgjpmaH","r7PYGudJdM7Y0r8CIk0U","tBu1Ypr9Bnrn3FjDPar4","twVw0ATcDtMA94MjrlWi","vIxEXyYjNWJIOW5qT9BH","y9Rf9CFM4OlwmWtyxqQ6"],"reportType":"category","title":"Category Analysis Report"}
+::1 - - [01/Sep/2025:05:29:11 +0000] "POST /api/reports/generate HTTP/1.1" 201 2985 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:29:11.755Z] GET /api/reports body={}
+::1 - - [01/Sep/2025:05:29:12 +0000] "GET /api/reports HTTP/1.1" 200 37663 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+[2025-09-01T05:29:15.727Z] GET /api/reports/MZ8NmbofHDrBcPc7MFIC/download body={}
+::1 - - [01/Sep/2025:05:29:25 +0000] "GET /api/reports/MZ8NmbofHDrBcPc7MFIC/download HTTP/1.1" 200 3831 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"

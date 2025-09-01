@@ -35,18 +35,29 @@ const authenticateUser = async (req, res, next) => {
 
     const { userId } = req.user;
 
-    // Verify user exists in Firebase (skip if Firebase not available)
-    if (admin.apps.length > 0) {
-      const db = admin.firestore();
-      const userDoc = await db.collection('users').doc(userId).get();
+    // Verify user exists in Firebase (skip if Firebase not available or mock user)
+    if (admin.apps.length > 0 && !userId.startsWith('mock-user-')) {
+      try {
+        const db = admin.firestore();
+        const userDoc = await db.collection('users').doc(userId).get();
 
-      if (!userDoc.exists) {
-        return res.status(404).json({ error: 'User not found' });
+        if (!userDoc.exists) {
+          return res.status(404).json({ error: 'User not found' });
+        }
+
+        req.userData = userDoc.data();
+      } catch (firebaseError) {
+        console.log('Firebase user lookup failed, using token data for mock/dev mode');
+        // Fallback to token data if Firebase operation fails
+        req.userData = {
+          firstName: decoded.firstName,
+          lastName: decoded.lastName,
+          email: decoded.email,
+          role: 'user'
+        };
       }
-
-      req.userData = userDoc.data();
     } else {
-      // If Firebase not available, just use token data
+      // If Firebase not available or mock user, just use token data
       req.userData = {
         firstName: decoded.firstName,
         lastName: decoded.lastName,

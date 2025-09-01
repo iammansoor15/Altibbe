@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { Product } from '@/types';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || 'http://localhost:5000/api';
 
 // AI-specific types
 export interface AIQuestion {
@@ -44,6 +44,13 @@ const aiApi = axios.create({
   },
 });
 
+// Simple request deduplication cache
+const pendingRequests = new Map();
+
+function getRequestKey(url: string, data: any) {
+  return `${url}_${JSON.stringify(data)}`;
+}
+
 // Add auth token to requests
 aiApi.interceptors.request.use(
   (config) => {
@@ -51,9 +58,50 @@ aiApi.interceptors.request.use(
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
+
+    // Add request deduplication for POST requests
+    if (config.method === 'post' && config.data) {
+      const requestKey = getRequestKey(config.url || '', config.data);
+
+      if (pendingRequests.has(requestKey)) {
+        console.log(`[DEDUPE] Preventing duplicate request: ${requestKey}`);
+        // Cancel this request as there's already one in progress
+        const controller = new AbortController();
+        config.signal = controller.signal;
+        controller.abort();
+        return Promise.reject(new Error('Request deduplicated'));
+      }
+
+      // Mark this request as pending
+      pendingRequests.set(requestKey, Date.now());
+
+      // Clean up when request completes (will be handled in response interceptor)
+      config.timeout = 30000;
+    }
+
     return config;
   },
   (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// Response interceptor to clean up pending requests
+aiApi.interceptors.response.use(
+  (response) => {
+    // Clean up pending request on success
+    if (response.config.method === 'post') {
+      const requestKey = getRequestKey(response.config.url || '', response.config.data);
+      pendingRequests.delete(requestKey);
+    }
+    return response;
+  },
+  (error) => {
+    // Clean up pending request on error (but not for cancelled requests)
+    if (error.config?.method === 'post' && error.message !== 'Request deduplicated') {
+      const requestKey = getRequestKey(error.config.url || '', error.config.data);
+      pendingRequests.delete(requestKey);
+    }
     return Promise.reject(error);
   }
 );
@@ -71,11 +119,35 @@ export const aiService = {
     productName: string;
     category: string;
     generatedAt: string;
+    cached?: boolean;
+    deduplicated?: boolean;
   }>> => {
-    return aiApi.post('/ai/generate-questions', {
-      productData,
-      existingQuestions
-    });
+    try {
+      return await aiApi.post('/ai/generate-questions', {
+        productData,
+        existingQuestions
+      });
+    } catch (error: any) {
+      if (error.message === 'Request deduplicated') {
+        console.log('[DEDUPE] AI question generation request was deduplicated');
+        // Return a synthetic response indicating deduplication
+        return {
+          data: {
+            success: true,
+            questions: [],
+            productName: productData.productName || '',
+            category: productData.category || '',
+            generatedAt: new Date().toISOString(),
+            deduplicated: true
+          },
+          status: 200,
+          statusText: 'OK',
+          headers: {},
+          config: {}
+        } as AxiosResponse;
+      }
+      throw error;
+    }
   },
 
   /**
