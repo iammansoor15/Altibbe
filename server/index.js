@@ -40,16 +40,33 @@ if (!db) {
 app.use(helmet());
 
 // CORS configuration - Allow ALL origins (no localhost restrictions)
+// CORS configuration - Allow only specific production URLs (no localhost)
 app.use(cors({
   origin: (origin, callback) => {
-    // Always allow all origins for deployment
-    callback(null, origin || true);
+    const allowedOrigins = [
+      "https://altibbe-sjtm.onrender.com",
+      "https://altibbe-ai-service.onrender.com"
+    ];
+
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); // allow
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
   },
-  credentials: true, // allow cookies / auth headers
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin', 'X-Custom-Header'],
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
+  allowedHeaders: [
+    "Content-Type",
+    "Authorization",
+    "X-Requested-With",
+    "Accept",
+    "Origin",
+    "X-Custom-Header"
+  ],
+  optionsSuccessStatus: 200
 }));
+
 
 
 // Body parsing middleware (must come before logging that uses req.body)
